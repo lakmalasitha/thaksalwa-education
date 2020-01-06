@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        
+        $this->middleware(['auth'=>'verified']);
     }
 
     /**
@@ -31,10 +31,5 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function registerStudent(){
-        return view('auth.registerstu');
-    }
-    public function registerTeacher(){
-        return view('auth.registertea');
-    }
+    
 }

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layout.home');
+    return view('index');
 
 });
 Route::get('sign', function () {
@@ -23,44 +23,33 @@ Route::get('/reprofile', function () {
     return view('layout.regprofile');
 
 });
-Route::get('/login', function () {
-    return view('layout.login');
 
+Route::get('/changepas',function(){
+    return view('layout.changepasword');
 });
-Route::get('/teacherprofile', function () {
-    return view('layout.teacherprofile');
-
+Route::get('/moreinfo',function(){
+    return view('layout.advertisment.moreinfo');
 });
-// Route::get('/addads', function () {
-//     return view('layout.advertisment.addadvertisement');
 
-// });
-Route::get('/addolevel', function () {
-    return view('layout.advertisment.ordinaryleveladd');
 
-});
-Route::get('/addalevel', function () {
-    return view('layout.advertisment.ordinaryleveladd');
+Route::get('/aboutus', 'PageController@aboutus');
+Route::get('/contactus', 'PageController@contactus');
 
-});
-Route::get('/showadds', function () {
-    return view('layout.advertisment.showadvertisement');
-
-});
-// Route::get('/addalevel', function () {
-//     return view('layout.advertisment.advanceleveladd');
-
-// });
 
 Route::get('/addolevel', 'AddAdvertisementController@olevel')->middleware('auth');
-Route::post('/advertisement', 'AddAdvertisementController@addadvertisement')->middleware('auth');
+Route::get('/addalevel', 'AddAdvertisementController@alevel')->middleware('auth');
+Route::post('/advertisement', 'TeacherPostController@addteacherpost')->middleware('auth');
 Route::get('/addads', 'AddAdvertisementController@index')->middleware('auth');
+Route::get('/teacherpost', 'TeacherPostController@showpost');
 
 
 
-Auth::routes();
+
+
+
+Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 // Route::get('/index', 'HomeController@index')->name('index')->middleware('auth');
-Route::get('/register/student', 'HomeController@registerStudent')->name('home');
-Route::get('/register/teacher', 'HomeController@registerTeacher')->name('home');
+Route::get('/register/student', 'RegisterHelp@registerStudent')->name('home');
+Route::get('/register/teacher', 'RegisterHelp@registerTeacher')->name('home');

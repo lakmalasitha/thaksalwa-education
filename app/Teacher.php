@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
-    public function advertisement(){
+    public function teacherpost(){
 
-        return $this->hasMany(AddAdvertisement::class);
+        return $this->hasMany(TeacherPost::class);
         
     }
 

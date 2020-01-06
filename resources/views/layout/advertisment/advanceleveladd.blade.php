@@ -11,15 +11,19 @@
     @include('heads.innernavibar')
     <div class="columns">
         <div class="column is-3"></div>
+        
         <div class="column is-6">
+        <form action="/advertisement" method="POST">
+            @csrf
             <div class="">
+                    <input class="input" type="text" value="{{ Auth::user()->id }}" name="teacher_id" hidden>
                 <div class="field">
-                        <label class="label">Name</label>
+                        <label class="label" >Name</label>
                             <div class="control">
-                                <input class="input" type="text">
+                                <input class="input" type="text" name="name">
                             </div>
                 </div>
-                <div class="field">
+                {{-- <div class="field">
                         <label class="label">Choose your Stream</label>
                             <div class="control">
                                 <label class="radio">
@@ -31,29 +35,29 @@
                                     GCE Advanced Level
                                 </label>
                             </div>
+                </div> --}}
+                <div class="field">
+                    <label class="label"  >Choose Language</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="language">
+                                <option >Sinhala</option>
+                                <option >Tamil</option>
+                                <option >English</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="filed">
-                    <label class="label">Choose your Subject</label>
+                    <label class="label" >Choose your 
+                    </label>
                     <div class="contorl">
                         <div class="select">
-                            <select>                            
-                                <option >Select Subject</option>
-                                <option class="has-background-grey-light has-text-black-bis has-text-weight-semibold" disabled>English</option>
-                                <option >Sinhala</option>
-                                <option >Buddhisum</option>
-                                <option >Mathematics</option>
-                                <option >sinhala literature </option>
-                                <option >Tamil Language</option>
-                                <option >Science</option>
-                                <option >Hindi</option>
-                                <option >Art</option>
-                                <option >Oriantal Music</option>
-                                <option >Western Music</option>
-                                <option >Dancing</option>
-                                <option >Business & Accounting Studies </option>
-                                <option >History</option>
-                                <option >Information & communication Studies</option>
-                                <option >Health and Physical Education</option>
+                            <select name="subject">                            
+                                <option >Bio Stream</option>
+                                <option >Maths Stream</option>
+                                <option >Commerce Stream</option>
+                                <option >Arts stream</option>
                             </select>
                         </div>
                     </div>
@@ -61,14 +65,14 @@
                 <div class="field">                   
                         <label class="label">Institution Name</label>
                             <div class="control">
-                                <input class="input" type="text">
+                                <input class="input" name="institude" type="text">
                             </div>
                 </div>
                 <div class="filed">
-                        <label class="label">Province</label>
+                        <label class="label"  >Province</label>
                             <div class="contorl">
                                 <div class="select">
-                                    <select>                            
+                                    <select name="province">                            
                                         <option >Central</option>
                                         <option >South</option> 
                                         <option >North</option>
@@ -80,14 +84,14 @@
                 <div class="field">
                     <label class="label">Postal Code</label>
                     <div class="contol">
-                        <input class="input" type="text">
+                        <input class="input" type="text" name="postalCode">
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">District</label>
+                    <label class="label" >District</label>
                     <div class="control">
                         <div class="select">
-                            <select>
+                            <select name="district">
                                 <option >Kandy</option>
                                 <option >Kurunagala</option>
                                 <option >Colombo</option>
@@ -99,13 +103,13 @@
                 <div class="field">
                     <div class="label">Contact Number</div>
                     <div class="control">
-                        <input class="input" type="text">
+                        <input class="input" type="text" name="contactNumber">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Email Address</label>
                     <div class="contol">
-                        <input class="input" type="Email">
+                        <input class="input" type="Email" name="email">
                     </div>
                 </div>
                 <div class="field">
@@ -134,7 +138,7 @@
                       <div class="field">
                         <label class="label">Discription</label>
                         <div class="control">
-                          <textarea class="textarea" placeholder="Textarea"></textarea>
+                          <textarea class="textarea" placeholder="Textarea" name="discription"></textarea>
                         </div>
                       </div>
                      <div class="field is-grouped">
@@ -147,14 +151,15 @@
                       </div>
     
             </div>
-    
+        </form>
         </div>
+    
         <div class="column is-3"></div>
         
 
     </div>
     <div>
-        @include('heads.footer')
+        {{-- @include('heads.footer') --}}
     </div>
 </body>
 </html>

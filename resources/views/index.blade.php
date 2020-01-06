@@ -5,7 +5,7 @@
 	<title>Education Supporting System</title>
 </head>
 <body>
-		@include('heads.navibar')
+		@include('heads.outernavibar')
 	
 		<main>
 			
@@ -55,14 +55,16 @@
 			<section class="aboutIntroBlock pb-0 text-center text-lg-left position-relative">
 				<div class="container">
 					<div class="row">
-						<div class="col-12 col-lg-8">
+						<div class="col-12 ">
 							<div class="pr-xl-5">
 								<header class="headingHead wow fadeInUp" data-wow-delay="0.1s">
 									<h2 class="text-uppercase blockH font-weight-bold">
 										<strong class="font-weight-normal hTitle d-block fontBase">About</strong>
 										<span class="d-block">Who We Are?</span>
 									</h2>
-									<p>we are support teachers and student</p>
+									<p>thaksalawa warmly presents you our greater service to you and invites you to browse through our site and find your trusted student-base, teacher-base or any other solutions for what matters with your education. if you are student or a parent and looking forward to have an ideal teacher for your desired subjects, thaksalawa is in the leader of providing you that service. if you a teacher and expecting to expand your great service, thaksalawa is the idyllic place to flourish your expectations. unlike other sites, thaksalawa asks you to fill no cumbersome forms. it never asks you to perform any tedious self-searches. with one or two clicks, you have to provide your preferences and what sort of desires that you are looking for. once your preferences and desires are notified, thaksalawa will provide your needs instantly!</p>
+									<a href="/aboutus"><button class="button is-success  is-pulled-right " >More about</button></a>
+									
 									<p></p>
 								</header>
 							</div>
@@ -70,7 +72,6 @@
 						
 					</div>
 				</div>
-			<a class="btn btnTheme quoteFormOpener ti-angle-left d-lg-none" data-toggle="collapse" href="#collapseQuoteForm" role="button" aria-expanded="false" aria-controls="collapseQuoteForm"><span class="sr-only">open</span></a>
 			</section>	
 			<section class="bg-light stepsDescrBlock text-center contentBlock">
 				<div class="container">

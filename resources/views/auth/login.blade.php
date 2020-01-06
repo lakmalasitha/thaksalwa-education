@@ -17,10 +17,8 @@
 </head>
 
 <body class="grayme">
-
     
-    <br>
-    <div class="columns fulllogin">
+    <div class="columns logbox">
         <div class="column is-offset-1 is-half leftsideeffect">
             <a href="/">               
             </a>
@@ -29,7 +27,7 @@
                 <p class="subtitle  has-text-centered is-size-7 tinytextlogin">Enter your email and password to login
                     to your accoount.</p>
             </div>
-            <div class="loginform">
+            <div class="loginform" >
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="field">
@@ -92,21 +90,8 @@
     </div>
     <input type="hidden" name="recaptcha" id="recaptcha">
     </form>
-    @if(session()->has('message'))
-            <div class="">
-                <h1 class="is-size-7 has-text-weight-bold has-text-danger"><b> {{ session()->get('message') }}</b></h1>
-            </div>
-            @endif
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfXZK4UAAAAAFEXFJDiBg45M3Qf4dwXihIUIWvV"></script>
-    <script>
-        grecaptcha.ready(function(){
-                        grecaptcha.execute('6LfXZK4UAAAAAFEXFJDiBg45M3Qf4dwXihIUIWvV',{action: 'login'}).then(function(token){
-                            if(token){
-                                document.getElementById('recaptcha').value = token;
-                            }
-                        });
-                    });
-    </script>
+    
+    
     </div>
     </div>
     <div class="column is-one-third rightsideeffect has-background-success">
@@ -123,14 +108,29 @@
     </div>
     </div>
   
-        @include('heads.footer')
+        {{-- @include('heads.footer') --}}
 
    
 
 
     {{-- Footer --}}
 	{{-- @include('layouts.footer')  --}}
-	{{-- JavaScript Files --}}
+    {{-- JavaScript Files --}}
+    {{-- @if(session()->has('message'))
+            <div class="">
+                <h1 class="is-size-7 has-text-weight-bold has-text-danger"><b> {{ session()->get('message') }}</b></h1>
+            </div>
+            @endif --}}
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfXZK4UAAAAAFEXFJDiBg45M3Qf4dwXihIUIWvV"></script>
+    <script>
+            grecaptcha.ready(function(){
+                            grecaptcha.execute('6LfXZK4UAAAAAFEXFJDiBg45M3Qf4dwXihIUIWvV',{action: 'login'}).then(function(token){
+                                if(token){
+                                    document.getElementById('recaptcha').value = token;
+                                }
+                            });
+                        });
+        </script>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/fontawesome.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>

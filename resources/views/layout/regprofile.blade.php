@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-  @include('heads.navibar')
+  @include('heads.outernavibar')
     <div class="container" >
       <div class="signinprofile">
         <div class="row ">

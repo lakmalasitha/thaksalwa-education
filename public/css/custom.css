@@ -148,6 +148,9 @@ body{
     font-size: 15px;
     font-weight: 600;
 }
+.infoimage{
+    margin-left:20%;
+}
 
 .selectbox{
     background-color:rgba(0,0,0,0.0) !important;
@@ -258,8 +261,16 @@ body{
     font-size: 300% !important;
 }
 
-.aboutus{
+/* .aboutus{
     margin: 50px;
+} */
+
+.abutusimage{
+        background-image: url("/images/abut.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
 }
 
 .is-horizontal-center{
@@ -274,8 +285,8 @@ body{
     /* margin: 0 40% 0 40%; */
 }
 
-.contactusimg{
-    background-image: linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.0)),url("/img/contactus.jpeg");
+/* .contactusimg{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.0)),url("/images/1.jpg");
     margin-top: 12px;
     background-position: center;
     background-repeat: no-repeat; 
@@ -286,14 +297,24 @@ body{
     filter: brightness(0.3);
     transition: filter 2s !important;
     margin-bottom: -12px;
-}
+} */
 
-.contactusimg:hover{
+/* .contactusimg:hover{
     filter: blur(0px);
     filter: brightness(1);
     transition: filter 2s !important;
-}
+} */
 
+/* contact us image */
+.contactusimage{
+        background-image: url("/images/call.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        /* position: relative; */
+
+}
 .msgbutton{
     padding: 0px 30px 0px 30px;
 }
@@ -313,9 +334,9 @@ body{
     margin-left: 25% !important;
 }
 
-.grayme{
+/* .grayme{
     background-color: #F0F2F5;
-}
+} */
 
 .usermenu:hover{
     background-color: #ffffff4f !important;
@@ -375,22 +396,25 @@ body{
     margin: 20px 0px 10px 0px !important;
 }
 
-.fulllogin{
+.fulllog{
     margin: 80px 100px 140px 100px !important;
     
+}
+.logbox{
+    padding-top: 8%;
 }
 
 .leftsideeffect{
     background-color: #ffffff;
-    -webkit-box-shadow: -7px 0px 22px -5px rgba(51,204,153,0.57);
-    -moz-box-shadow: -7px 0px 22px -5px rgba(51,204,153,0.57);
-    box-shadow: -7px 0px 22px -5px rgba(51,204,153,0.57);
+    /* -webkit-box-shadow: -7px 0px 22px -5px rgba(51,204,153,0.57);
+    -moz-box-shadow: -7px 0px 22px -5px rgba(51,204,153,0.57); */
+    box-shadow: -7px 0px 22px -5px rgba(23, 24, 23, 0.57);
 }
 
 .rightsideeffect{
-    -webkit-box-shadow: 12px 0px 22px -5px rgba(51,204,153,0.57);
-    -moz-box-shadow: 12px 0px 22px -5px rgba(51,204,153,0.57);
-    box-shadow: 12px 0px 22px -5px rgba(51,204,153,0.57);
+    /* -webkit-box-shadow: 12px 0px 22px -5px rgba(51,204,153,0.57);
+    -moz-box-shadow: 12px 0px 22px -5px rgba(51,204,153,0.57); */
+    box-shadow: 12px 0px 22px -5px rgba(23, 24, 23, 0.57);
 
 }
 
@@ -891,11 +915,10 @@ figure.profileavatar figcaption::before {
     margin-top: 20px;
 }
 .footer{
-    margin-top: 60%;
+
+    padding-top: 20%;
 }
-.foter{
-    margin-top: 20%;
-}
+
 .adminprofilenavbar{
     background-color: #09F !important;
     margin-left: -30px !important;
@@ -955,6 +978,7 @@ figure.profileavatar figcaption::before {
  }
  .fulllogin{
      margin: 0px !important;
+
  }
  .navsearch{
     margin-left: 0% !important;

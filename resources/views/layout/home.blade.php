@@ -5,7 +5,7 @@
 	<title>Education Supporting System</title>
 </head>
 <body>
-		@include('heads.navibar')
+		@include('heads.outernavibar')
 	
 		<main>
 			

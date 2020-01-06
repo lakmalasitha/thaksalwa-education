@@ -23,18 +23,19 @@
             <figure class="image is-128x128">
                 <img class="is-rounded" src="images/ol.jpg">
                 <div class="selectbutton">
-                    <a href="/addalevel"><button class="button is-success">{{ Auth::user()->id }}</button></a>
+                    <a href="/addolevel"><button class="button is-success">Ordinary level</button></a>
                 </div>
                 <label for=""></label>
             </figure>
           </div>
           <div class="column is-4">
-            <figure class="image is-128x128">
-                <img class="is-rounded" src="images/al.jpg">
-                <div class="selectbutton">
-                  <button class="button is-success">Advanced level</button>
-                </div>
-            </figure>
+              <figure class="image is-128x128">
+                  <img class="is-rounded" src="images/ol.jpg">
+                  <div class="selectbutton">
+                      <a href="/addalevel"><button class="button is-success">Advanced level</button></a>
+                  </div>
+                  <label for=""></label>
+              </figure>
           </div>
           <div class="column is-1"></div>
           </div>   

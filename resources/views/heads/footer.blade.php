@@ -8,12 +8,12 @@
     @include('heads.heads')
 </head>
 <body>
-    <footer class="footer has-background-black">
+    <footer class="footer has-background-black is-marginless" >
             <div class="content has-text-centered has-text-white">
                 <p class="has-text-white has-text-centered">
                 <strong class="has-text-white">THAKSALAWA</strong> by <a href="" class="has-text-white">Thaksalwa (pvt) Ltd.</a>
                 </p>
-                <small>4380, Clifford Street, Fremont, CA 94538</small>
+                <small>4380, colombo Street, kandy, CA 94538</small>
             </div>
             <div class="has-text-centered has-text-white">
                 <span class="icon">

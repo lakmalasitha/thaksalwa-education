@@ -32,6 +32,7 @@
                                 <div class="select is-black">
                                     <select>
                                       <option>Select Stream</option>
+                                      <option>Ordinary Level</option>
                                       <option>Advance Level</option>
                                     </select>
                                 </div>
@@ -44,8 +45,9 @@
                                 <div class="select is-black">
                                     <select>
                                       <option>Select Medium</option>
-                                      <option>Tamil</option>
-                                      <option>English</option>
+                                      <option>Sinhala Medium</option>
+                                      <option>Tamil Medium</option>
+                                      <option>English Medium</option>
                                     </select>
                                   </div>
                                 </div>
@@ -57,9 +59,9 @@
                                 <div class="select is-black">
                                     <select>
                                       <option>Select Subject</option>
-                                      <option>English nadjcsncjkdjkvbbd dsgsb  sbsfgb xgsrhbr</option>
-                                      <option>English nadjcsncjkdjkvbbd dsgsb  sbsfgb xgsrhbr dhgsfn dhrh</option>
-                                      <option>English nadjcsncjkdjkvbbd dsgsb  sbsfgb xgsrhbrhr hrsh</option>
+                                      <option></option>
+                                      <option></option>
+                                      <option></option>
                                     </select>
                                 </div>
                             </div>
@@ -78,45 +80,47 @@
 
             </form>
             <div class="my-5"></div>
-            
-                <div class="column is-4">
-                    <div class="card">
-                            <div class="card-image">
-                              <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                              </figure>
+            <div class="columns">
+              @foreach ($ShowAds as $item)
+  
+                 
+              <div class="column is-4">
+                  <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-left">
+                                <figure class="image is-48x48">
+                                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                              </div>
+                              <div class="media-content">
+                                <p class="title is-4">{{$item->name}}</p>
+                                <p class="subtitle is-6">{{$item->email}}</p>
+                              </div>
                             </div>
-                            <div class="card-content">
-                              <div class="media">
-                                <div class="media-left">
-                                  <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                  </figure>
-                                </div>
-                                <div class="media-content">
-                                  <p class="title is-4">John Smith</p>
-                                  <p class="subtitle is-6">@johnsmith</p>
-                                </div>
-                              </div>
-                          
-                              <div class="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                              </div>
+                        
+                            <div class="content"> 
+                              <br>             
+                              <h4>{{$item->subject}}</h4>
+                              <h5>{{$item->language}}</h5>
+                              <a>{{$item->institude}}</a>
+                              <br>
+                              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                              <button class="button is-success is-pulled-right">See more</button>
                             </div>
                           </div>
-                </div>
+                        </div>
+              </div>
+              @endforeach
+              </div> 
             <div class="columns">
 
             </div>
         </div>
-        <div class="foter">
-            @include('heads.footer')
-
-        </div>
-    
 </body>
 </html>

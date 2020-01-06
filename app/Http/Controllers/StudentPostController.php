@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\AddAdvertisement;
+use App\StudentPost;
 use Illuminate\Http\Request;
 
-class AddAdvertisementController extends Controller
+class StudentPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AddAdvertisementController extends Controller
      */
     public function index()
     {
-        return view('layout.advertisment.addadvertisement');
+        //
     }
 
     /**
@@ -22,14 +22,6 @@ class AddAdvertisementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function olevel(){
-        return view('layout.advertisment.ordinaryleveladd');
-    }
-    public function alevel(){
-        return view('layout.advertisment.advanceleveladd');
-    }
-
-    
     public function create()
     {
         //
@@ -46,26 +38,24 @@ class AddAdvertisementController extends Controller
         //
     }
 
-
     /**
      * Display the specified resource.
      *
-     * @param  \App\AddAdvertisement  $addAdvertisement
+     * @param  \App\StudentPost  $studentPost
      * @return \Illuminate\Http\Response
      */
-    public function show(AddAdvertisement $addAdvertisement)
+    public function show(StudentPost $studentPost)
     {
-        
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AddAdvertisement  $addAdvertisement
+     * @param  \App\StudentPost  $studentPost
      * @return \Illuminate\Http\Response
      */
-    public function edit(AddAdvertisement $addAdvertisement)
+    public function edit(StudentPost $studentPost)
     {
         //
     }
@@ -74,10 +64,10 @@ class AddAdvertisementController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AddAdvertisement  $addAdvertisement
+     * @param  \App\StudentPost  $studentPost
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AddAdvertisement $addAdvertisement)
+    public function update(Request $request, StudentPost $studentPost)
     {
         //
     }
@@ -85,12 +75,11 @@ class AddAdvertisementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AddAdvertisement  $addAdvertisement
+     * @param  \App\StudentPost  $studentPost
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AddAdvertisement $addAdvertisement)
+    public function destroy(StudentPost $studentPost)
     {
         //
     }
-
 }
