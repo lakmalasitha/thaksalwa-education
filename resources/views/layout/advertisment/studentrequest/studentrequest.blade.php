@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/custom.css">
     <title>add advertisement</title>
-    <style>
+    {{-- <style>
       .footer{
-        margin-top: 50%;
+        margin-top: 20%;
       }
-    </style>
+    </style> --}}
 </head>
 <body>
     @include('heads.navibar')
@@ -23,7 +23,7 @@
             <figure class="image is-128x128">
                 <img class="is-rounded" src="images/ol.jpg">
                 <div class="selectbutton">
-                    <a href="/addolevel"><button class="button is-success">Ordinary level</button></a>
+                    {{-- <a href="/olevelrequest"><button class="button is-success">Ordinary level</button></a> --}}
                 </div>
                 <label for=""></label>
             </figure>
@@ -32,7 +32,7 @@
               <figure class="image is-128x128">
                   <img class="is-rounded" src="images/ol.jpg">
                   <div class="selectbutton">
-                      <a href="/addalevel"><button class="button is-success">Advanced level</button></a>
+                      <a href="/alevelrequest"><button class="button is-success">Advanced level</button></a>
                   </div>
                   <label for=""></label>
               </figure>
@@ -42,9 +42,9 @@
 
       </div>
     </div>
-    <div>
+      {{-- <div>
         @include('heads.footer')
-      </div>
+      </div> --}}
 
 </body>
 </html>

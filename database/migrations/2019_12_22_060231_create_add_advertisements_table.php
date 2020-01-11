@@ -25,6 +25,17 @@ class CreateAddAdvertisementsTable extends Migration
             $table->string('district');
             $table->string('contactNumber');
             $table->string('email');
+            $tabel->boolean('monday');
+            $tabel->boolean('tuesday');
+            $tabel->boolean('wednesday');
+            $tabel->boolean('thursday');
+            $tabel->boolean('friday');
+            $tabel->boolean('saturday');
+            $tabel->boolean('sunday');
+            $tabel->boolean('morning');
+            $tabel->boolean('afternoon');
+            $tabel->boolean('evening');
+            $tabel->boolean('night');
             $table->string('images');
             $table->text('discription');
             $table->timestamps();

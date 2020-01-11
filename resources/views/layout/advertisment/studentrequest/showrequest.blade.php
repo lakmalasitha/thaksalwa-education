@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/custom.css">
-    <title>Show Advertisement</title>
+    <title>Show Request</title>
     @include('heads.heads')
     
 </head>
@@ -101,7 +101,7 @@
             <div class="my-5"></div>
             <div class="columns">
             <div class="container">
-              @foreach ($ShowAds as $item)
+              @foreach ($ShowAdvertisment as $item)
                   <div class="column is-4">
                     <div class="card">
                             <div class="card-image">

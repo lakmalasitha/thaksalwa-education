@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>add advertisement</title>
+    <style>
+        .footer
+    </style>
 </head>
 <body>
-    @include('heads.innernavibar')
+    @include('heads.navibar')
+    <div class="my-5"></div>
     <div class="columns">
         <div class="column is-3"></div>
         
         <div class="column is-6">
-        <form action="/advertisement" method="POST">
+        <form action="/advertisement" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="">
                     <input class="input" type="text" value="{{ Auth::user()->id }}" name="teacher_id" hidden>
@@ -23,27 +27,14 @@
                                 <input class="input" type="text" name="name">
                             </div>
                 </div>
-                {{-- <div class="field">
-                        <label class="label">Choose your Stream</label>
-                            <div class="control">
-                                <label class="radio">
-                                    <input type="radio" name="question">
-                                    GCE Ordinary Level
-                                </label>
-                                <label class="radio">
-                                    <input type="radio" name="question">
-                                    GCE Advanced Level
-                                </label>
-                            </div>
-                </div> --}}
                 <div class="field">
                     <label class="label"  >Choose Language</label>
                     <div class="control">
                         <div class="select">
                             <select name="language">
-                                <option >Sinhala</option>
-                                <option >Tamil</option>
-                                <option >English</option>
+                                <option >Sinhala Medium</option>
+                                <option >Tamil Medium</option>
+                                <option >English Medium</option>
                             </select>
                         </div>
                     </div>
@@ -69,6 +60,10 @@
                                 <option >History</option>
                                 <option >Information & communication Studies</option>
                                 <option >Health and Physical Education</option>
+                                <option >Combin mathes</option>
+                                <option >Bio</option>
+                                <option >Chemitry</option>
+                                <option >Technology</option>
                             </select>
                         </div>
                     </div>
@@ -124,10 +119,33 @@
                     </div>
                 </div>
                 <div class="field">
+                        <label class="label">Class Conduct on</label>
+                        <div class="contol">
+                            <label><input type="checkbox" name="monday">Monday</label>
+                            <label><input type="checkbox" name="tuesday">Tuesdat</label>
+                            <label><input type="checkbox" name="wednesday">Wednesday</label>
+                            <label><input type="checkbox" name="thursday">Thursday</label>
+                            <label><input type="checkbox" name="friday">friday</label>
+                            <label><input type="checkbox" name="saturday">Saturday</label>
+                            <label><input type="checkbox" name="sunday">Sunday</label>
+                         
+                        </div>
+                </div>
+                <div class="field">
+                        <label class="label">Class Conduct Time</label>
+                        <div class="contol">
+                            <label><input type="checkbox" name="morning">Morning</label>
+                            <label><input type="checkbox" name="afternoon">Afternoon</label>
+                            <label><input type="checkbox" name="evening">Evening</label>
+                            <label><input type="checkbox" name="night">Night</label>
+            
+                        </div>
+                 </div>
+                <div class="field">
                     <div class="label">Image Uploade</div>
                     <div class="file has-name">
                             <label class="file-label">
-                                <input class="file-input" type="file" name="resume">
+                                <input class="file-input" type="file" name="filename">
                                     <span class="file-cta">
                                         <span class="file-icon">
                                         <i class="fas fa-upload"></i>
@@ -139,19 +157,21 @@
                                     <span class="file-name">
                                         Screen Shot 2017-07-29 at 15.54.25.png
                                     </span>
-                            </label>
-                                <div class="input-group-btn">
-                                        <button class="button is-success addmore" type="button"><i
-                                                class="glyphicon glyphicon-plus"></i>More</button>
-                                </div>
+                            </label>                            
                     </div>
                 </div>
-                      <div class="field">
+                <div class="field">
+                        <label class="label">Qulifications</label>
+                        <div class="control">
+                          <textarea class="textarea" placeholder="Qulifications"></textarea>
+                        </div>
+                </div>
+                <div class="field">
                         <label class="label">Discription</label>
                         <div class="control">
                           <textarea class="textarea" placeholder="Textarea" name="discription"></textarea>
                         </div>
-                      </div>
+                </div>
                      <div class="field is-grouped">
                         <div class="control">
                           <button class="button is-success">Add advertisement</button>
@@ -172,5 +192,9 @@
     <div>
         @include('heads.footer')
     </div>
+
+        
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/fontawesome.js"></script>
 </body>
 </html>

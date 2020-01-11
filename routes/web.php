@@ -30,6 +30,17 @@ Route::get('/changepas',function(){
 Route::get('/moreinfo',function(){
     return view('layout.advertisment.moreinfo');
 });
+Route::get('/prohome',function(){
+    return view('layout.profile.profilehome');
+});
+Route::get('/alrequst',function(){
+    return view('layout.advertisment.studentrequest.alevelrequest');
+});
+Route::get('/olrequst',function(){
+    return view('layout.advertisment.studentrequest.olevelrequest');
+});
+
+
 
 
 Route::get('/aboutus', 'PageController@aboutus');
@@ -41,6 +52,12 @@ Route::get('/addalevel', 'AddAdvertisementController@alevel')->middleware('auth'
 Route::post('/advertisement', 'TeacherPostController@addteacherpost')->middleware('auth');
 Route::get('/addads', 'AddAdvertisementController@index')->middleware('auth');
 Route::get('/teacherpost', 'TeacherPostController@showpost');
+
+Route::get('/olevelrequest', 'AddAdvertisementController@olevelreq')->middleware('auth');
+Route::get('/alevelrequest', 'AddAdvertisementController@alevelreq')->middleware('auth');
+Route::get('/request', 'AddAdvertisementController@requst')->middleware('auth');
+Route::get('/studentpost', 'StudentPostController@showads');
+
 
 
 

@@ -500,6 +500,13 @@ body{
     margin-bottom: -20px !important;
 }
 
+.panelmenu{
+    background-color: #EFEDF8;
+    padding-left: 25px;
+    padding-top: 20px;
+    margin-bottom: 20px !important;
+    overflow: hidden;
+}
 .dashboxes{
     margin-top: -30px !important;
     padding-top: 20px;
@@ -914,10 +921,10 @@ figure.profileavatar figcaption::before {
 .adminfoot{
     margin-top: 20px;
 }
-.footer{
+/* .footer{
 
     padding-top: 20%;
-}
+} */
 
 .adminprofilenavbar{
     background-color: #09F !important;

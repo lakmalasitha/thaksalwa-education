@@ -14,9 +14,11 @@
 	<link rel="stylesheet" href="/css/bulma.min.css">
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/mainstyle.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
 	<link rel="stylesheet" href="css/fontawesome/fontawesome.css">
      
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/plugins.js"></script>
-	<script src="js/jquery.main.js"></script>	
+	<script src="js/jquery.main.js"></script>
+	<script src="js/select2.min.js"></script>	

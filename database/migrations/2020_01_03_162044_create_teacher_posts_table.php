@@ -25,6 +25,17 @@ class CreateTeacherPostsTable extends Migration
             $table->string('district');
             $table->string('contactNumber');
             $table->string('email');
+            $table->boolean('monday');
+            $table->boolean('tuesday');
+            $table->boolean('wednesday');
+            $table->boolean('thursday');
+            $table->boolean('friday');
+            $table->boolean('saturday');
+            $table->boolean('sunday');
+            $table->boolean('morning');
+            $table->boolean('afternoon');
+            $table->boolean('evening');
+            $table->boolean('night');
             $table->string('images');
             $table->text('discription');
             $table->timestamps();

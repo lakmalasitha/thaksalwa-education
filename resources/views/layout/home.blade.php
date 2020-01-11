@@ -135,7 +135,7 @@
 					</div>
 				</div>
 			</section> --}}
-			<section class="contentBlock ltPostsBlock">
+			{{-- <section class="contentBlock ltPostsBlock">
 				<div class="container">
 					<div class="row">
 						<div class="col-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8 text-center">
@@ -204,7 +204,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> --}}
 		</main>
 		<div class="foter" >
 			@include('heads.footer')

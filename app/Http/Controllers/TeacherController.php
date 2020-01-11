@@ -26,10 +26,10 @@ class TeacherController extends Controller
     {
         //
     }
-    public function showadvertisment(){
+    // public function showadvertisment(){
 
-        $teacherpost = 
-    }
+    //     $teacherpost = 
+    // }
 
     /**
      * Store a newly created resource in storage.

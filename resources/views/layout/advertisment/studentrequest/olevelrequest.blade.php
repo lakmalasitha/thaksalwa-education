@@ -14,10 +14,10 @@
         <div class="column is-3"></div>
         
         <div class="column is-6">
-        <form action="/advertisement" method="POST" enctype="multipart/form-data">
+        <form action="/request" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="">
-                    <input class="input" type="text" value="{{ Auth::user()->id }}" name="teacher_id" hidden>
+                    <input class="input" type="text" value="{{ Auth::user()->id }}" name="student_id" hidden>
                 <div class="field">
                         <label class="label" >Name</label>
                             <div class="control">
@@ -66,12 +66,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="field">                   
-                        <label class="label">Institution Name</label>
-                            <div class="control">
-                                <input class="input" name="institude" type="text">
-                            </div>
-                </div>
+                <div class="field">
+                        <label class="label">Class category</label>
+                        <div class="contol">
+                            <label><input type="checkbox" name="group">Group class</label>                        
+                            <label><input type="checkbox" name="individual">individual class</label>
+                            <label><input type="checkbox" name="hall">Hall class</label>                     
+                        </div>
+                 </div>
                 <div class="filed">
                         <label class="label"  >Province</label>
                             <div class="contorl">
@@ -117,7 +119,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Class Conduct on</label>
+                    <label class="label">Class needed </label>
                     <div class="contol">
                         <label><input type="checkbox" name="monday">Monday</label>
                         <label><input type="checkbox" name="tuesday">Tuesdat</label>
@@ -130,7 +132,7 @@
                     </div>
                 </div>
                 <div class="field">
-                        <label class="label">Class Conduct Time</label>
+                        <label class="label">Class needed Time</label>
                         <div class="contol">
                             <label><input type="checkbox" name="morning">Morning</label>                        
                             <label><input type="checkbox" name="afternoon">Afternoon</label>
@@ -138,25 +140,6 @@
                             <label><input type="checkbox" name="night">Night</label>
                         </div>
                  </div>
-                 <div class="field">
-                        <div class="label">Image Uploade</div>
-                        <div class="file has-name">
-                                <label class="file-label">
-                                    <input class="file-input" type="file" name="filename">
-                                        <span class="file-cta">
-                                            <span class="file-icon">
-                                            <i class="fas fa-upload"></i>
-                                            </span>
-                                            <span class="file-label">
-                                            Choose a file
-                                            </span>
-                                        </span>
-                                        <span class="file-name">
-                                            Screen Shot 2017-07-29 at 15.54.25.png
-                                        </span>
-                                </label>                            
-                        </div>
-                    </div>
                 <div class="field">
                         <label class="label">Discription</label>
                         <div class="control">
@@ -165,7 +148,7 @@
                 </div>
                      <div class="field is-grouped">
                         <div class="control">
-                          <button class="button is-success">Add advertisement</button>
+                          <button class="button is-success">Add Request</button>
                           <button class="button is-success">Cancel</button>
                         </div>
                       </div>

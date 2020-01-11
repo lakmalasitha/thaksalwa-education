@@ -16,6 +16,10 @@ class AddAdvertisementController extends Controller
     {
         return view('layout.advertisment.addadvertisement');
     }
+    public function requst()
+    {
+        return view('layout.advertisment.studentrequest.studentrequest');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -28,6 +32,12 @@ class AddAdvertisementController extends Controller
     public function alevel(){
         return view('layout.advertisment.advanceleveladd');
     }
+    public function olevelreq(){
+        return view('layout.advertisment.studentrequest.olevelrequest');
+    }
+    public function alevelreq(){
+        return view('layout.advertisment.studentrequest.alevelrequest');
+    } 
 
     
     public function create()

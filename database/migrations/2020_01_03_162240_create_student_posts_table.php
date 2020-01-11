@@ -15,6 +15,32 @@ class CreateStudentPostsTable extends Migration
     {
         Schema::create('student_posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('student_id');
+            $table->string('name');
+            $table->string('language');
+            $table->string('subject');
+            $table->string('institude');
+            $table->string('province');
+            $table->string('postalCode');
+            $table->string('district');
+            $table->string('contactNumber');
+            $table->string('email');
+            $table->boolean('monday');
+            $table->boolean('tuesday');
+            $table->boolean('wednesday');
+            $table->boolean('thursday');
+            $table->boolean('friday');
+            $table->boolean('saturday');
+            $table->boolean('sunday');
+            $table->boolean('group');
+            $table->boolean('individual');
+            $table->boolean('hall');
+            $table->boolean('morning');
+            $table->boolean('afternoon');
+            $table->boolean('evening');
+            $table->boolean('night');
+            $table->text('discription');
+
             $table->timestamps();
         });
     }

@@ -105,7 +105,7 @@
 									</button>
 									<div class="collapse navbar-collapse mainNavCollapse" id="pageMainNavCollapse">
 										<ul class="navbar-nav pageMainNavigation justify-content-md-end">
-											<li class="nav-item active dropdown">
+											<li class="nav-item dropdown">
 												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only">(current)</span></a>
 												<div class="dropdown-menu mainNavDropdown text-uppercase">
 													
@@ -262,7 +262,7 @@
 								</button>
 								<div class="collapse navbar-collapse mainNavCollapse" id="pageMainNavCollapse">
 									<ul class="navbar-nav pageMainNavigation justify-content-md-end">
-										<li class="nav-item active dropdown">
+										<li class="nav-item  dropdown">
 											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only">(current)</span></a>
 											<div class="dropdown-menu mainNavDropdown text-uppercase">
 												
@@ -277,7 +277,7 @@
 											</div>
 										</li>
 										<li class="nav-item dropdown">
-											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/addads"  " aria-haspopup="true" aria-expanded="false">Add Requset</a>
+											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/request"  " aria-haspopup="true" aria-expanded="false">Add Requset</a>
 											<div class="dropdown-menu mainNavDropdown text-uppercase">
 												
 												<ul class="list-unstyled navDropdownList">

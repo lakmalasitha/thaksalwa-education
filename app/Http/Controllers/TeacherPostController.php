@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\TeacherPost;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 
 class TeacherPostController extends Controller
@@ -23,28 +24,24 @@ class TeacherPostController extends Controller
         // $request->validate([
         //     'name' => 'required|max:50|min:3',
         //     'language' => 'required',
-        //     'subject' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+        //     'subject' => 'required',
         //     'district' => 'required',
-        //     'postalcode' => 'required|integer',
+        //     'postalcode' => 'required',
         //     'province' => 'required',
-        //     'discription' => 'required|min:100',
-        //     'contactNumber' => 'required|regex:/^[0-9]{10}$/',
+        //     'discription' => 'required|min:3',
+        //     'contactNumber' => 'required',
         //     'email' => 'email|required',
-        //     // 'filename' => 'required',
-        //     // 'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+        //      'filename' => 'required',
+        //     'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             
         // ]);
 
         if($request->hasfile('filename'))
          {
+                $image = $request->file('filename');
+                $name= uniqid('thaksalawa_') . '.' . $image->getClientOriginalExtension();
+                Image::make($image)->resize(1280,876)->save(\public_path('/uploads/img/' . $name));  
 
-            foreach($request->file('filename') as $image)
-            {
-                $name= uniqid('real_') . '.' . $image->getClientOriginalExtension();
-                //$image->move(public_path().'/uploads/property/house', $name);
-                Image::make($image)->resize(1280,876)->save(\public_path('/uploads/olevel/' . $name));  
-                $data[] = $name;  
-            }
          }
 
         $advertisement = new TeacherPost;
@@ -58,15 +55,84 @@ class TeacherPostController extends Controller
         $advertisement->district = request('district');
         $advertisement->contactNumber = request('contactNumber');
         $advertisement->email = request('email');
-        // $advertisement->images = json_encode($data);
+        $advertisement->images = $name;
+
+        if($request->has('monday')){
+            $advertisement->monday=1;
+        }else{
+            $advertisement->monday=0;
+        }
+
+        if($request->has('tuesday')){
+            $advertisement->tuesday=1;
+        }else{
+            $advertisement->tuesday=0;
+        }
+
+        if($request->has('wednesday')){
+            $advertisement->wednesday=1;
+        }else{
+            $advertisement->wednesday=0;
+        }
+
+        if($request->has('thursday')){
+            $advertisement->thursday=1;
+        }else{
+            $advertisement->thursday=0;
+        }
+
+        if($request->has('friday')){
+            $advertisement->friday=1;
+        }else{
+            $advertisement->friday=0;
+        }
+
+        if($request->has('saturday')){
+            $advertisement->saturday=1;
+        }else{
+            $advertisement->saturday=0;
+        }
+
+        if($request->has('sunday')){
+            $advertisement->sunday=1;
+        }else{
+            $advertisement->sunday=0;
+        }
+
+        if($request->has('morning')){
+            $advertisement->morning=1;
+        }else{
+            $advertisement->morning=0;
+        }
+
+        if($request->has('afternoon')){
+            $advertisement->afternoon=1;
+        }else{
+            $advertisement->afternoon=0;
+        }
+
+        if($request->has('evening')){
+            $advertisement->evening=1;
+        }else{
+            $advertisement->evening=0;
+        }
+
+        if($request->has('night')){
+            $advertisement->night=1;
+        }else{
+            $advertisement->night=0;
+        }
+
         $advertisement->discription = request('discription');
         $advertisement->save();
         return back();
+
+      //  dd ($request);
     }
 
     public function showpost(){
         
-        $ShowAds = TeacherPost::orderBy('created_at','desc')->paginate(3);
+        $ShowAds = TeacherPost::orderBy('created_at','desc')->paginate(6);
         return view('layout.advertisment.teacheradvertisement',compact('ShowAds'));
     }
     /**
