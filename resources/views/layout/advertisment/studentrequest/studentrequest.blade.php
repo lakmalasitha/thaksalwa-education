@@ -23,7 +23,7 @@
             <figure class="image is-128x128">
                 <img class="is-rounded" src="images/ol.jpg">
                 <div class="selectbutton">
-                    {{-- <a href="/olevelrequest"><button class="button is-success">Ordinary level</button></a> --}}
+                    <a href="/olevelrequest"><button class="button is-success">Ordinary level</button></a>
                 </div>
                 <label for=""></label>
             </figure>

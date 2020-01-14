@@ -9,8 +9,8 @@
     <title>about Us</title>
 </head>
 <body>
-    @include('heads.innernavibar')
-    {{-- <div class=" abutusimage"></div> --}}
+    @include('heads.outernavibar')
+    <div class="my-3"></div>
     <div class="container  ">
         <div class="columns ">
             <div class="column is-1"></div>

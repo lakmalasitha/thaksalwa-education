@@ -39,6 +39,12 @@ Route::get('/alrequst',function(){
 Route::get('/olrequst',function(){
     return view('layout.advertisment.studentrequest.olevelrequest');
 });
+Route::get('/editpro',function(){
+    return view('layout.profile.editprofile');
+});
+// Route::get('/myads',function(){
+//     return view('layout.profile.myadvertisment');
+// });
 
 
 
@@ -52,11 +58,20 @@ Route::get('/addalevel', 'AddAdvertisementController@alevel')->middleware('auth'
 Route::post('/advertisement', 'TeacherPostController@addteacherpost')->middleware('auth');
 Route::get('/addads', 'AddAdvertisementController@index')->middleware('auth');
 Route::get('/teacherpost', 'TeacherPostController@showpost');
+Route::get('/showmore/{id}', 'TeacherPostController@showmore');
 
 Route::get('/olevelrequest', 'AddAdvertisementController@olevelreq')->middleware('auth');
 Route::get('/alevelrequest', 'AddAdvertisementController@alevelreq')->middleware('auth');
 Route::get('/request', 'AddAdvertisementController@requst')->middleware('auth');
+Route::post('/studentreq', 'StudentPostController@addstudentrequest')->middleware('auth');
 Route::get('/studentpost', 'StudentPostController@showads');
+Route::get('/showrequest/{id}', 'StudentPostController@showrequest');
+
+Route::get('/myads', 'PageController@myadvertisment');
+Route::get('/editprofile', 'PageController@editprofile');
+Route::get('/changepassword', 'PageController@changepassword');
+Route::get('/myprofile', 'PageController@myprofile');
+
 
 
 

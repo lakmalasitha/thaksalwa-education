@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\TeacherPost;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TeacherPostController extends Controller
 {
@@ -54,7 +55,9 @@ class TeacherPostController extends Controller
         $advertisement->postalCode = request('postalCode');
         $advertisement->district = request('district');
         $advertisement->contactNumber = request('contactNumber');
-        $advertisement->email = request('email');
+        $advertisement->email = request('email');    
+       
+
         $advertisement->images = $name;
 
         if($request->has('monday')){
@@ -122,7 +125,7 @@ class TeacherPostController extends Controller
         }else{
             $advertisement->night=0;
         }
-
+        
         $advertisement->discription = request('discription');
         $advertisement->save();
         return back();
@@ -134,6 +137,11 @@ class TeacherPostController extends Controller
         
         $ShowAds = TeacherPost::orderBy('created_at','desc')->paginate(6);
         return view('layout.advertisment.teacheradvertisement',compact('ShowAds'));
+    }
+
+    public function showmore(TeacherPost $id){
+        $TeacherPost = $id;
+        return view('layout.advertisment.moreinfo',compact('TeacherPost'));
     }
     /**
      * Show the form for creating a new resource.

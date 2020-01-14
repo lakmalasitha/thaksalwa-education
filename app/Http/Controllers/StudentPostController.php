@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\StudentPost;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class StudentPostController extends Controller
 {
@@ -38,7 +38,6 @@ class StudentPostController extends Controller
         $advertisement->name = request('name');
         $advertisement->language = request('language');
         $advertisement->subject = request('subject');
-        $advertisement->institude = request('institude');
         $advertisement->province = request('province');
         $advertisement->postalCode = request('postalCode');
         $advertisement->district = request('district');
@@ -137,6 +136,11 @@ class StudentPostController extends Controller
     public function showads(){
         $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->paginate(6);
         return view('layout.advertisment.studentrequest.showrequest',compact('ShowAdvertisment'));
+    }
+
+    public function showrequest(StudentPost $id){
+        $StudentPost = $id;
+        return view('layout.advertisment.studentrequest.studentdetail',compact('StudentPost'));
     }
 
 

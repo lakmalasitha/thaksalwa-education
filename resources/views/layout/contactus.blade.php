@@ -9,7 +9,14 @@
     <title>Contact Us</title>
 </head>
 <body>
-        @include('heads.innernavibar')
+      @guest
+        @include('heads.outernavibar')
+
+        @else
+          @include('heads.navibar')
+      @endguest
+        
+
         <div class="contactusimage">
             <div class="my-5"></div>
             <div class="container">

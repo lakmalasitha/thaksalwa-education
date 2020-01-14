@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>add advertisement</title>
-    <style>
+    {{-- <style>
         .footer
-    </style>
+    </style> --}}
 </head>
 <body>
     @include('heads.navibar')
@@ -159,12 +159,6 @@
                                     </span>
                             </label>                            
                     </div>
-                </div>
-                <div class="field">
-                        <label class="label">Qulifications</label>
-                        <div class="control">
-                          <textarea class="textarea" placeholder="Qulifications"></textarea>
-                        </div>
                 </div>
                 <div class="field">
                         <label class="label">Discription</label>

@@ -99,23 +99,14 @@
 
             </form>
             <div class="my-5"></div>
-            <div class="columns">
+            
             <div class="container">
+            <div class="row">
               @foreach ($ShowAdvertisment as $item)
-                  <div class="column is-4">
+                  <div class="row-md-4">
                     <div class="card">
-                            <div class="card-image">
-                              <figure class="image is-4by3">
-                                <img src="uploads/img/{{$item->images}}" alt="Placeholder image">
-                              </figure>
-                            </div>
                             <div class="card-content">
                               <div class="media">
-                                <div class="media-left">
-                                  <figure class="image is-48x48">
-                                    <img src="uploads/img/{{$item->images}}" alt="Placeholder image">
-                                  </figure>
-                                </div>
                                 <div class="media-content">
                                   <p class="title is-4">{{$item->name}}</p>
                                   <p class="subtitle is-6">{{$item->email}}</p>
@@ -126,10 +117,10 @@
                                 <br>             
                                 <h4>{{$item->subject}}</h4>
                                 <h5>{{$item->language}}</h5>
-                                <a>{{$item->institude}}</a>
+                                <a>{{$item->contactNumber}}</a>
                                 <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                                <a href="/moreinfo/{{$item->id}}"><button class="button is-success is-pulled-right">See more</button></a>
+                                <time datetime="2016-1-1">{{$item->created_at->isoFormat('LLLL')}}</time>
+                                <a href="/showrequest/{{$item->id}}"><button class="button is-success is-pulled-right">See more</button></a>
                               </div>
                             </div>
                           </div>

@@ -99,10 +99,11 @@
 
             </form>
             <div class="my-5"></div>
-            <div class="columns">
+            
             <div class="container">
+            <div class="row">
               @foreach ($ShowAds as $item)
-                  <div class="column is-4">
+                  <div class="col-md-4">
                     <div class="card">
                             <div class="card-image">
                               <figure class="image is-4by3">
@@ -126,10 +127,10 @@
                                 <br>             
                                 <h4>{{$item->subject}}</h4>
                                 <h5>{{$item->language}}</h5>
-                                <a>{{$item->institude}}</a>
+                                {{str_limit(str_replace("&nbsp;",'',strip_tags($item->discription)),100)}}
                                 <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                                <a href="/moreinfo/{{$item->id}}"><button class="button is-success is-pulled-right">See more</button></a>
+                                <time datetime="2016-1-1">{{$item->created_at->isoFormat('LLLL')}}</time>
+                                <a href="/showmore/{{$item->id}}"><button class="button is-success is-pulled-right">See more</button></a>
                               </div>
                             </div>
                           </div>

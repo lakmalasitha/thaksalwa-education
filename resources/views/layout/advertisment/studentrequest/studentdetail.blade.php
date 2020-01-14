@@ -10,62 +10,40 @@
 </head>
 <body>
     <div class="container">
-        <div class="my-5"></div>
         <div class="columns">
+            <div class="my-5"></div>
             <div class="column is-5"></div>
             <div class=" moreinfoimg column is-4 ">
-                <figure class="image is-128x128 ">
-                    <img class="is-rounded infoimage" src="/uploads/img/{{$TeacherPost->images}}">
-                </figure><br>
-                <div class="my-5"></div>
+                    <figure class="image is-128x128 ">
+                            <img class="is-rounded infoimage" >
+                    </figure><br>
                     <button class="button is-success">Email Here</button>
                     <button class="button is-black">Call Here</button>
             </div>
-            <div class="column is-3">
-                
-                   
-            </div>
+
         </div>
         <hr class="hrline">
         <div class="subtitle has-text-weight-semibold">
-              Teacher Details
+             Student Details
         </div>
-        <div class="columns">
-            <div class="column is-6">
-                <div class="detailscolumn">
-                        <p>Subject:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->subject}}</span></p>
-                        <p>Medium:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->language}}</span></p>
-                        <p>Institude: <span class="has-text-weight-semibold">{{$TeacherPost->institude}}</span></p>
-                        <p>Province: <span class="has-text-weight-semibold">{{$TeacherPost->province}}</span></p>
-                        <p>PostalCode: <span class="has-text-weight-semibold">{{$TeacherPost->postalCode}}</span></p>
-                        <p>District:<span class="has-text-weight-semibold">{{$TeacherPost->district}}</span></p>
-                        <p>ContactNumber:<span class="has-text-weight-semibold">{{$TeacherPost->contactNumber}}</span></p>
-                        <p>Email<span class="has-text-weight-semibold">{{$TeacherPost->email}}</span></p>
-                </div>
-            </div>
-                <div class="column is-6">
-                    <div class="detail">
-                        <p>Subject:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->subject}}</span></p>
-                        <p>Medium:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->language}}</span></p>
-                        <p>Institude: <span class="has-text-weight-semibold">{{$TeacherPost->institude}}</span></p>
-                        <p>Province: <span class="has-text-weight-semibold">{{$TeacherPost->province}}</span></p>
-                        <p>PostalCode: <span class="has-text-weight-semibold">{{$TeacherPost->postalCode}}</span></p>
-                        <p>District:<span class="has-text-weight-semibold">{{$TeacherPost->district}}</span></p>
-                        <p>ContactNumber:<span class="has-text-weight-semibold">{{$TeacherPost->contactNumber}}</span></p>
-                        <p>Email<span class="has-text-weight-semibold">{{$TeacherPost->email}}</span></p>
-                    </div>
-
-                </div>
+        <div class="detailscolumn">
+                <p>Subject:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$StudentPost->subject}}</span></p><br>
+                <p>Medium:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$StudentPost->language}}</span></p><br>
+                <p>Province: <span class="has-text-weight-semibold">{{$StudentPost->province}}</span></p><br>
+                <p>PostalCode: <span class="has-text-weight-semibold">{{$StudentPost->postalCode}}</span></p><br>
+                <p>District:<span class="has-text-weight-semibold">{{$StudentPost->district}}</span></p><br>
+                <p>ContactNumber:<span class="has-text-weight-semibold">{{$StudentPost->contactNumber}}</span></p><br>
+                <p>Email<span class="has-text-weight-semibold">{{$StudentPost->email}}</span></p><br>
         </div>
         <hr class="hrline">
         <div class="subtitle has-text-weight-semibold">
             Discription
         </div>
-        <p><span>{{$TeacherPost->discription}}</span></p>
+        <p><span>{{$StudentPost->discription}}</span></p>
 
         <hr class="hrline">
         <div class="subtitle has-text-weight-semibold">
-            Contact Teacher
+            Contact Student
         </div>
         <div class="contactform">
             <div class="columns">

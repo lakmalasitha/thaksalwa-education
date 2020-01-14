@@ -19,7 +19,6 @@ class CreateStudentPostsTable extends Migration
             $table->string('name');
             $table->string('language');
             $table->string('subject');
-            $table->string('institude');
             $table->string('province');
             $table->string('postalCode');
             $table->string('district');

@@ -925,6 +925,9 @@ figure.profileavatar figcaption::before {
 
     padding-top: 20%;
 } */
+.profileimage{
+    margin-inline-start: 15%;
+}
 
 .adminprofilenavbar{
     background-color: #09F !important;

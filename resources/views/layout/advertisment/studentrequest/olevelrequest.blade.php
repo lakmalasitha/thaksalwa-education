@@ -14,7 +14,7 @@
         <div class="column is-3"></div>
         
         <div class="column is-6">
-        <form action="/request" method="POST" enctype="multipart/form-data">
+        <form action="/studentreq" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="">
                     <input class="input" type="text" value="{{ Auth::user()->id }}" name="student_id" hidden>
