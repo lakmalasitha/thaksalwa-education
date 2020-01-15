@@ -25,18 +25,18 @@
                                 <div class="field">
                                         <label class="label has-text-centered is-capitalized">Drop your Message</label>
                                       </div>
-                            <form action="" method="POST">
+                            <form action="{{ route('createContact') }}" method="POST">
                                 @csrf
                                 <div class="field">
                                     <label class="label">Name</label>
                                     <div class="control">
-                                      <input class="input" type="text" placeholder="Enter Your Name">
+                                      <input class="input" type="text" name="name" placeholder="Enter Your Name" reqired>
                                     </div>
                                   </div>
                                   <div class="field">
                                     <label class="label">Email</label>
                                     <div class="control has-icons-left has-icons-right">
-                                      <input class="input is-danger" type="email" placeholder="Enter Your Email">
+                                      <input class="input is-danger" type="email" name="email" placeholder="Enter Your Email" reqired>
                                       <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                       </span>
@@ -44,11 +44,11 @@
                                         <i class="fas fa-exclamation-triangle"></i>
                                       </span>
                                     </div>
-                                    <p class="help is-danger">This email is invalid</p>
+                                    <!-- <p class="help is-danger">This email is invalid</p> -->
                                   </div>
                                   
                                   <div class="field">
-                                    <label class="label">Type Of Inquary</label>
+                                    <label class="label" name="inquary[]">Type Of Inquary</label >
                                     <div class="control">
                                       <div class="select">
                                         <select>
@@ -63,12 +63,12 @@
                                   <div class="field">
                                     <label class="label">Message</label>
                                     <div class="control">
-                                      <textarea class="textarea" placeholder="Textarea"></textarea>
+                                      <textarea class="textarea" name="message" placeholder="Textarea" reqired></textarea>
                                     </div>
                                   </div>
                                   <div class="field is-grouped">
                                     <div class="control">
-                                      <button class="button is-link">Send</button>
+                                      <button class="button is-link" type="submit">Send</button>
                                     </div>
                                     <div class="control">
                                       <button class="button is-link is-light">Cancel</button>

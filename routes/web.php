@@ -42,15 +42,23 @@ Route::get('/olrequst',function(){
 Route::get('/editpro',function(){
     return view('layout.profile.editprofile');
 });
+Route::get('/uplodefiles',function(){
+    return view('layout.uplodefiles');
+});
+Route::get('/downloadfiles',function(){
+    return view('layout.downloadfiles');
+});
 // Route::get('/myads',function(){
 //     return view('layout.profile.myadvertisment');
 // });
-
-
-
+//file upload route
+Route::resource('files_upload','FileController');
+Route::get('uplodefiles','FileController@index');
+Route::post('/delete/filedelete/{id}', 'FileController@destroy');
+Route::get('downloadfiles','FileController@downloadFunc');
 
 Route::get('/aboutus', 'PageController@aboutus');
-Route::get('/contactus', 'PageController@contactus');
+// Route::get('/contactus', 'PageController@contactus');
 
 
 Route::get('/addolevel', 'AddAdvertisementController@olevel')->middleware('auth');
@@ -99,3 +107,12 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 // Route::get('/index', 'HomeController@index')->name('index')->middleware('auth');
 Route::get('/register/student', 'RegisterHelp@registerStudent')->name('home');
 Route::get('/register/teacher', 'RegisterHelp@registerTeacher')->name('home');
+
+//routes contact
+Route::get('/contactus', 'ContactFormController@create')->name('createContact');
+Route::post('/contactus', 'ContactFormController@store');
+
+Route::get('/videoHome', 'VideoController@index')->name('videoHome');
+Route::resource('/comments','CommentsController');
+Route::resource('/replies','RepliesController');
+Route::post('/replies/ajaxDelete','RepliesController@ajaxDelete');
