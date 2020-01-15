@@ -71,6 +71,20 @@ Route::get('/myads', 'PageController@myadvertisment');
 Route::get('/editprofile', 'PageController@editprofile');
 Route::get('/changepassword', 'PageController@changepassword');
 Route::get('/myprofile', 'PageController@myprofile');
+Route::get('/profilehome', 'PageController@profilehome');
+Route::get('/profile/ad/{id}/editadvertisment', 'PageController@editadvertisment');
+Route::post('/profile/ad/{id}/editadvertisment','PageController@storeeditads');
+Route::post('/delete/teacherpost/{postid}', 'TeacherPostController@delete');
+
+
+Route::get('/studentprofile', 'StudentController@studentprofile');
+Route::get('/myrequest', 'StudentController@showrequest');
+Route::get('/profile/ad/{id}/editrequest', 'StudentController@editrequest');
+Route::post('/profile/ad/{id}/editrequest','StudentController@storeeditrequest');
+
+// Route::get('/profile/ad/{id}/editrequest', 'StudentController@showrequest');
+
+
 
 
 

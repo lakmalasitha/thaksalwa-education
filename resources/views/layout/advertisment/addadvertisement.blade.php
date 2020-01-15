@@ -9,7 +9,7 @@
     <title>add advertisement</title>
     <style>
       .footer{
-        margin-top: 50%;
+        margin-top: 20%;
       }
     </style>
 </head>
@@ -42,9 +42,14 @@
 
       </div>
     </div>
-    <div>
+    
         @include('heads.footer')
-      </div>
+
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/fontawesome.js"></script>
+    <script src="/js/bootstrap.js"></script>
+      
 
 </body>
 </html>

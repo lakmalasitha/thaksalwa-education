@@ -23,6 +23,10 @@
                             <div class="control">
                                 <input class="input" type="text" name="name">
                             </div>
+                @if ($errors->has('name'))
+                <span>
+                    <strong class="has-text-danger">{{ $errors->first('name') }}</strong>
+                </span> @endif
                 </div>  
                 <div class="field">
                     <label class="label"  >Choose Language</label>
@@ -92,6 +96,10 @@
                     <div class="contol">
                         <input class="input" type="text" name="postalCode">
                     </div>
+                    @if ($errors->has('postalCode'))
+                    <span>
+                        <strong class="has-text-danger">{{ $errors->first('postalCode') }}</strong>
+                    </span> @endif
                 </div>
                 <div class="field">
                     <label class="label" >District</label>
@@ -111,12 +119,20 @@
                     <div class="control">
                         <input class="input" type="text" name="contactNumber">
                     </div>
+                    @if ($errors->has('contactNumber'))
+                    <span>
+                        <strong class="has-text-danger">{{ $errors->first('contactNumber') }}</strong>
+                    </span> @endif
                 </div>
                 <div class="field">
                     <label class="label">Email Address</label>
                     <div class="contol">
                         <input class="input" type="Email" name="email">
                     </div>
+                    @if ($errors->has('email'))
+                    <span>
+                        <strong class="has-text-danger">{{ $errors->first('email') }}</strong>
+                    </span> @endif
                 </div>
                 <div class="field">
                     <label class="label">Class needed </label>
@@ -145,6 +161,10 @@
                         <div class="control">
                           <textarea class="textarea" placeholder="Discription" name="discription"></textarea>
                         </div>
+                        @if ($errors->has('discription'))
+                        <span>
+                            <strong class="has-text-danger">{{ $errors->first('discription') }}</strong>
+                        </span> @endif
                 </div>
                      <div class="field is-grouped">
                         <div class="control">

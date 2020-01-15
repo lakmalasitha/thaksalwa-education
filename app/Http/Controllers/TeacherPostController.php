@@ -22,20 +22,21 @@ class TeacherPostController extends Controller
 
     public function addteacherpost(Request $request){
 
-        // $request->validate([
-        //     'name' => 'required|max:50|min:3',
-        //     'language' => 'required',
-        //     'subject' => 'required',
-        //     'district' => 'required',
-        //     'postalcode' => 'required',
-        //     'province' => 'required',
-        //     'discription' => 'required|min:3',
-        //     'contactNumber' => 'required',
-        //     'email' => 'email|required',
-        //      'filename' => 'required',
-        //     'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+        $request->validate([
+            'name' => 'required|max:50|min:3',
+            'language' => 'required',
+            'subject' => 'required',
+            'institude' => 'required',
+            'district' => 'required',
+            'postalCode' => 'required',
+            'province' => 'required',
+            'discription' => 'required|min:3',
+            'contactNumber' => 'required',
+            'email' => 'email|required',
+             'filename' => 'required',
+            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             
-        // ]);
+        ]);
 
         if($request->hasfile('filename'))
          {
@@ -135,7 +136,7 @@ class TeacherPostController extends Controller
 
     public function showpost(){
         
-        $ShowAds = TeacherPost::orderBy('created_at','desc')->paginate(6);
+        $ShowAds = TeacherPost::orderBy('created_at','desc')->get();
         return view('layout.advertisment.teacheradvertisement',compact('ShowAds'));
     }
 
@@ -148,9 +149,40 @@ class TeacherPostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function searchadvertisment()
     {
-        //
+        $keyword = $request->input('searchquery');
+        $subject = $request->input('subject');
+        $medium =$request->input('medium');
+        $stream=$request->input('stream');
+
+        $TeacherPost = TeacherPost::whereHas('property', function ($query) use ($stream) {
+            $query->where('noOfRooms', '>=', $room);
+        })->whereHas('property', function ($query) use ($keyword) {
+            $query->where(function ($query) use ($keyword) {
+                $query->orwhere('postalCode', 'LIKE', $keyword)
+                    ->orWhere('province', 'LIKE', $keyword)
+                    ->orWhere('city', 'LIKE', $keyword);
+            });
+        })->whereHas('property', function ($query) use ($minPrice, $maxPrice) {
+
+            $query->whereBetween('amount', array($minPrice, $maxPrice));
+        })->whereHas('property', function ($query) {
+
+            $query->where('availability', 'LIKE', "YES");
+
+        })->where(function ($query) use ($swimmingPool) {
+
+            $query->where('swimmingPool', 'LIKE', $swimmingPool);
+        })->where(function ($query) use ($noOfFloors) {
+
+            $query->where('noOfFloors', '>=', $noOfFloors);
+        })->where(function ($query) use ($outdoor) {
+
+            $query->where('garden', 'LIKE', $outdoor);
+        })->get();
+
+        return view('results.houseresult', compact('houses'));
     }
 
     /**
@@ -204,8 +236,11 @@ class TeacherPostController extends Controller
      * @param  \App\TeacherPost  $teacherPost
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TeacherPost $teacherPost)
+    public function delete(Request $request)
     {
-        //
+        // dd($teacherPost);
+        DB::table('teacher_posts')->where('id', '=',request('id'))->delete();
+        return back();
+        
     }
 }

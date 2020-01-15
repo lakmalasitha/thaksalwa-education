@@ -32,101 +32,44 @@
                   <div class="centerinputbox">
                     <form action="" method="post">
                       @csrf
-                      <div class="field">
-                        <label class="label">Name</label>
-                        <p class="control has-icons-left">
-                          <input class="input" type="text" value="" placeholder="Your Name" name="name">
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-user"></i>
-                          </span>
-                        </p>
-                      </div>
-                      <div class="field">
-                          <label class="label">Email</label>
-                        <p class="control has-icons-left">
-                          <input class="input" type="email" value="" placeholder="Your Email" name="email">
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-at"></i>
-                          </span>
-                        </p>
-                      </div>
-                      <div class="field">
-                          <label class="label">Description (Max 100 Words)</label>
-                        <p class="control has-icons-left">
-                          <input class="input" type="text" value="" placeholder="Your Description (Max 100 Words)" name="descrption">
-                          <span class="icon is-small is-left">
-                                <i class="fas fa-address-card"></i>
-                            </span>
-                        </p>
-                  </div>
-                  <div class="field">
-                      <label class="label">NIC</label>
-                    <p class="control has-icons-left">
-                      <input class="input" type="text" value="" placeholder="NIC" name="nic">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-id-badge"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                      <label class="label">Address</label>
-                    <p class="control has-icons-left">
-                      <input class="input" type="text" value="" placeholder="Address" name="address">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-location-arrow"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                      <label class="label">City</label>
-                    <p class="control has-icons-left">
-                      <input class="input" type="text" value="" placeholder="City" name="city">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-thumbtack"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                      <label class="label">Birthday</label>
-                    <p class="control has-icons-left">
-                      <input class="input" type="date" value=""  name="birthday">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-calendar-alt"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                      <label class="label">Gender</label>
-                    <div class="control has-icons-left">
-                      <div class="select">
-                      <select name="gender">
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                      </select>
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-venus-mars"></i>
-                      </span>
-                  </div>
+                        <div class="field">
+                          <label class="label">Name</label>                      
+                            <input class="input" type="text" value="" placeholder="Your Name" name="name">                                 
+                        </div>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <input class="input" type="email" value="" placeholder="Your Email" name="email">
+                        </div>
+                        <div class="field">
+                          <label class="label">NIC</label>
+                          <input class="input" type="text" value="" placeholder="NIC" name="nic">
+                        </div>
+                        <div class="field">
+                            <label class="label">Address</label>                   
+                            <input class="input" type="text" value="" placeholder="Address" name="address">
+                        </div>
+                        <div class="field">
+                            <label class="label">City</label>
+                            <input class="input" type="text" value="" placeholder="City" name="city">
+                        </div>
+                        <div class="field">
+                            <label class="label">Phone No</label>                 
+                            <input class="input" type="text" value="" placeholder="Phone No" name="phoneno">
+                        </div>
+                        <div class="field">
+                            <label class="label">Qulifications</label>                 
+                            <input class="input" type="text" value="" placeholder="qulifications" name="descrption">
+                        </div>
+                        <div class="field">
+                            <p class="control has-text-centered">
+                                <button type="submit" class="button is-success">
+                                      <span class="buttonspace">Save Change</span>
+                                </button>
+                            </p>
+                        </div>
+                      </form>
                 </div>
-                </div>
-                <div class="field">
-                      <label class="label">Phone No</label>
-                    <p class="control has-icons-left">
-                      <input class="input" type="text" value="" placeholder="Phone No" name="phoneno">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-phone-volume"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                    <p class="control has-text-centered">
-                      <button type="submit" class="button is-success">
-                            <span class="buttonspace">Save Change</span>
-                      </button>
-                    </p>
-                  </div>
-                  </form>
+                     
                 </div>
             </div>
             </div>

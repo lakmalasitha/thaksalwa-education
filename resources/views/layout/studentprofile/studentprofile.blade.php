@@ -25,7 +25,7 @@
                 </p>
                 <ul class="menu-list">
                   <li><a href="/myprofile">My Profile</a></li>
-                  <li><a href="/myads">My Advertisement</a></li>                  
+                  <li><a href="/myrequest">My Advertisement</a></li>                  
                   <li><a>My Inbox</a></li>
                   
                 </ul>
@@ -47,16 +47,12 @@
                           
 
        </div>
-       @if(Request::is('myprofile'))
-          @include('layout.teacherprofile.myprofile')
-        @elseif(Request::is('editprofile'))
-           @include('layout.teacherprofile.editprofile')
-        @elseif(Request::is('changepassword'))
-           @include('layout.teacherprofile.changepassword')
-        @elseif(Request::is('myads'))
-           @include('layout.teacherprofile.treadadvertisment')
-        @elseif(Request::is('profile/ad/*/editadvertisment'))
-           @include('layout.teacherprofile.editadvertisment')
+       @if(Request::is('myrequest'))
+          @include('layout.studentprofile.treadrequset')
+       {{-- @elseif(Request::is('editprofile'))
+          @include('layout.studentprofile.editrequest') --}}
+       @elseif(Request::is('profile/ad/*/editrequest'))
+          @include('layout.studentprofile.editrequest')
        @else
        
       @endif    

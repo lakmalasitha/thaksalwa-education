@@ -12,15 +12,15 @@
             <div class="row">
                    
                  
-                    @if($TeacherPost->count() > 0) 
-                    @foreach ($TeacherPost as $item)
-                        @include('layout.teacherprofile.myadvertisment') 
+                    @if($StudentPost->count() > 0) 
+                    @foreach ($StudentPost as $item)
+                        @include('layout.studentprofile.myrequset') 
                     @endforeach 
                     {{-- @else
                         @include('profile.noresult') --}}
                     @endif
             </div>
-            {{ $TeacherPost->links() }}
+            {{ $StudentPost->links() }}
         </div>
         
     </div>

@@ -30,7 +30,7 @@
                         <div class="field">
                             <div class="control">
                                 <div class="select is-black">
-                                    <select>
+                                    <select name="stream">
                                       <option>Select Stream</option>
                                       <option>Ordinary Level</option>
                                       <option>Advance Level</option>
@@ -43,7 +43,7 @@
                         <div class="field">
                             <div class="control">
                                 <div class="select is-black">
-                                    <select>
+                                    <select name="medium">
                                       <option>Select Medium</option>
                                       <option>Sinhala Medium</option>
                                       <option>Tamil Medium</option>

@@ -71,7 +71,7 @@
 													   onclick="event.preventDefault();
 																	 document.getElementById('logout-form').submit();">
 														{{ __('Logout') }}
-													</a>
+												</a>
 				
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
@@ -147,7 +147,7 @@
 												</div>
 											</li>
 											<li class="nav-item dropdown">
-												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="contact2.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/profilehome">Profile</a>
 												<div class="dropdown-menu mainNavDropdown text-uppercase">
 													{{-- <ul class="list-unstyled navDropdownList">
 														<li>
@@ -304,7 +304,7 @@
 											</div>
 										</li>
 										<li class="nav-item dropdown">
-											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="contact2.html" role="button"  aria-haspopup="true" aria-expanded="false">Profile</a>
+											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/studentprofile" >Profile</a>
 											<div class="dropdown-menu mainNavDropdown text-uppercase">
 												{{-- <ul class="list-unstyled navDropdownList">
 													<li>

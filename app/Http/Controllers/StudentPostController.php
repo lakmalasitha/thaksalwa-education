@@ -20,18 +20,19 @@ class StudentPostController extends Controller
 
     public function addstudentrequest(Request $request){
 
-        // $request->validate([
-        //     'name' => 'required|max:50|min:3',
-        //     'language' => 'required',
-        //     'subject' => 'required',
-        //     'district' => 'required',
-        //     'postalcode' => 'required',
-        //     'province' => 'required',
-        //     'discription' => 'required|min:3',
-        //     'contactNumber' => 'required',
-        //     'email' => 'email|required',
-            
-        // ]);
+        $request->validate([
+            'name' => 'required|max:50|min:3',
+            'language' => 'required',
+            'subject' => 'required',
+            'district' => 'required',
+            'postalCode' => 'required',
+            'province' => 'required',
+            'discription' => 'required|min:3',
+            'contactNumber' => 'required',
+            'email' => 'email|required',
+            'filename' => 'required',
+            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+        ]);
 
         $advertisement = new StudentPost;
         $advertisement->student_id = request('student_id');

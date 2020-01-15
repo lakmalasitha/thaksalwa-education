@@ -26,6 +26,10 @@
                             <div class="control">
                                 <input class="input" type="text" name="name">
                             </div>
+                            @if ($errors->has('name'))
+                            <span>
+                                <strong class="has-text-danger">{{ $errors->first('name') }}</strong>
+                            </span> @endif
                 </div>
                 <div class="field">
                     <label class="label"  >Choose Language</label>
@@ -36,6 +40,10 @@
                                 <option >Tamil Medium</option>
                                 <option >English Medium</option>
                             </select>
+                            @if ($errors->has('language'))
+                            <span>
+                                <strong class="has-text-danger">{{ $errors->first('language') }}</strong>
+                            </span> @endif
                         </div>
                     </div>
                 </div>
@@ -65,6 +73,10 @@
                                 <option >Chemitry</option>
                                 <option >Technology</option>
                             </select>
+                            @if ($errors->has('subject'))
+                            <span>
+                                <strong class="has-text-danger">{{ $errors->first('subject') }}</strong>
+                            </span> @endif
                         </div>
                     </div>
                 </div>
@@ -73,6 +85,10 @@
                             <div class="control">
                                 <input class="input" name="institude" type="text">
                             </div>
+                            @if ($errors->has('institude'))
+                            <span>
+                                <strong class="has-text-danger">{{ $errors->first('institude') }}</strong>
+                            </span> @endif
                 </div>
                 <div class="filed">
                         <label class="label"  >Province</label>
@@ -80,10 +96,19 @@
                                 <div class="select">
                                     <select name="province">                            
                                         <option >Central</option>
-                                        <option >South</option> 
-                                        <option >North</option>
-                                        <option >Western</option>                                
+                                        <option >Eastern</option> 
+                                        <option >North Central</option>
+                                        <option >Northern</option>
+                                        <option >North Western</option>                                  
+                                        <option >Sabaragamuwa</option>  
+                                        <option >Southern</option>
+                                        <option >Uva</option>
+                                        <option >Western</option>  
                                     </select>
+                                    @if ($errors->has('province'))
+                                    <span>
+                                        <strong class="has-text-danger">{{ $errors->first('province') }}</strong>
+                                    </span> @endif
                                 </div>
                             </div>
                 </div>
@@ -92,17 +117,81 @@
                     <div class="contol">
                         <input class="input" type="text" name="postalCode">
                     </div>
+                    @if ($errors->has('postalCode'))
+                    <span>
+                        <strong class="has-text-danger">{{ $errors->first('postalCode') }}</strong>
+                    </span> @endif
                 </div>
                 <div class="field">
-                    <label class="label" >District</label>
+                    <label class="label" >City</label>
                     <div class="control">
                         <div class="select">
                             <select name="district">
-                                <option >Kandy</option>
-                                <option >Kurunagala</option>
-                                <option >Colombo</option>
-                                <option >Anurdhapura</option>
+                                    <option>Ambalangoda</option>
+                                    <option>Ampara</option>
+                                    <option>Anuradhapura</option>
+                                    <option>Avissawella</option>
+                                    <option>Badulla</option>
+                                    <option>Balangoda</option>
+                                    <option>Bandarawela</option>
+                                    <option>Batticaloa</option>
+                                    <option>Beruwala</option>
+                                    <option>Chavakacheri</option>
+                                    <option>Chilaw</option>
+                                    <option>Colombo</option>
+                                    <option>Dambulla</option>
+                                    <option>Dehiwala-Mount Lavinia</option>
+                                    <option>Embilipitiya</option>
+                                    <option>Eravur</option>
+                                    <option>Galle</option>
+                                    <option>Gampaha</option>
+                                    <option>Gampola</option>
+                                    <option>Hambantota</option>
+                                    <option>Haputale</option>
+                                    <option>Harispattuwa</option>
+                                    <option>Hatton</option>
+                                    <option>Horana</option>
+                                    <option>Ja-Ela</option>
+                                    <option>Jaffna</option>
+                                    <option>Kadugannawa</option>
+                                    <option>Kalmunai</option>
+                                    <option>Kalutara</option>
+                                    <option>Kandy</option>
+                                    <option>Kattankudy</option>
+                                    <option>Katunayake</option>
+                                    <option>Kegalle</option>
+                                    <option>Kelaniya</option>
+                                    <option>Kolonnawa</option>
+                                    <option>Kuliyapitiya</option>
+                                    <option>Kurunegala</option>
+                                    <option>Mannar</option>
+                                    <option>Matale</option>
+                                    <option>Matara</option>
+                                    <option>Minuwangoda</option>
+                                    <option>Moneragala</option>
+                                    <option>Moratuwa</option>
+                                    <option>Nawalapitiya</option>
+                                    <option>Negombo</option>
+                                    <option>Nuwara Eliya</option>
+                                    <option>Panadura</option>
+                                    <option>Peliyagoda</option>
+                                    <option>Point Pedro</option>
+                                    <option>Puttalam</option>
+                                    <option>Ratnapura</option>
+                                    <option>Sri Jayawardenapura Kotte</option>
+                                    <option>Talawakele</option>
+                                    <option>Tangalle</option>
+                                    <option>Trincomalee</option>
+                                    <option>Valvettithurai</option>
+                                    <option>Vavuniya</option>
+                                    <option>Wattala</option>
+                                    <option>Wattegama</option>
+                                    <option>Weligama</option>
                             </select>
+                            @if ($errors->has('district'))
+                            <span>
+                                <strong class="has-text-danger">{{ $errors->first('district') }}</strong>
+                            </span> @endif
                         </div>
                     </div>
                 </div>
@@ -111,12 +200,20 @@
                     <div class="control">
                         <input class="input" type="text" name="contactNumber">
                     </div>
+                    @if ($errors->has('contactNumber'))
+                    <span>
+                        <strong class="has-text-danger">{{ $errors->first('contactNumber') }}</strong>
+                    </span> @endif
                 </div>
                 <div class="field">
                     <label class="label">Email Address</label>
                     <div class="contol">
                         <input class="input" type="Email" name="email">
                     </div>
+                    @if ($errors->has('email'))
+                    <span>
+                        <strong class="has-text-danger">{{ $errors->first('email') }}</strong>
+                    </span> @endif
                 </div>
                 <div class="field">
                         <label class="label">Class Conduct on</label>
@@ -159,6 +256,10 @@
                                     </span>
                             </label>                            
                     </div>
+                    @if ($errors->has('filename'))
+                    <span>
+                        <strong class="has-text-danger">{{ $errors->first('filename') }}</strong>
+                    </span> @endif
                 </div>
                 <div class="field">
                         <label class="label">Discription</label>
@@ -166,6 +267,10 @@
                           <textarea class="textarea" placeholder="Textarea" name="discription"></textarea>
                         </div>
                 </div>
+                @if ($errors->has('discription'))
+                <span>
+                    <strong class="has-text-danger">{{ $errors->first('discription') }}</strong>
+                </span> @endif
                      <div class="field is-grouped">
                         <div class="control">
                           <button class="button is-success">Add advertisement</button>

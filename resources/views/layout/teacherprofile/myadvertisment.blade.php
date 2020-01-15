@@ -3,7 +3,7 @@
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-4by3">
-                        <img magesrc="/uploads/property/apartment/jj.ppp" alt="Placeholder i">
+                        <img src="uploads/img/{{$item->images}}" >
                     </figure>
                 </div>
                 <div class="card-content">
@@ -12,23 +12,24 @@
                         </div>
                         <div class="media-content">
                             <p class="is-6">
-                                <span class="has-text-dark">Name :</span>  <br>
-                                <span class="has-text-dark">Location :</span>  <br>
-                                <span class="has-text-dark">Est :</span> Rs. </p>
+                                <span class="has-text-dark">Name :{{$item->name}}</span>  <br>
+                                <span class="has-text-dark">Subject :{{$item->subject}}</span>  <br>
+                                <span class="has-text-dark">Medium :{{$item->language}}</span> </p>
                         </div>
                     </div>
     
                     <div class="content">
                         <div class="buttons is-pulled-right">
-                                <button class="button is-success is-pulled-right" onclick="window.open('/apartment/);">See More</button>
-                                <button class="button is-warning is-pulled-right" onclick="window.open('/profile/apartment//edit','_blank');">Edit</button>
-                                <form action="/profile/apartment//delete" method="post">
+                                <button class="button is-success is-pulled-right" onclick="window.open('/showmore/{{$item->id}}','_blank');">See More</button>
+                                <button class="button is-black is-pulled-right" onclick="window.open('/profile/ad/{{$item->id}}/editadvertisment','_blank');">Edit</button>
+                                <form action="/delete/teacherpost/{{$item->id}}" method="post">
                                     @csrf
-                                    <button class="button is-danger is-pulled-right" type="submit" onclick="deleteMe();">Delete</button>
+                                    <input type="hidden" name="id" value="{{$item->id}}">
+                                    <button class="button is-danger is-pulled-right" type="submit">Delete</button>
                                 </form>
                         </div>
                     </div>
-                </div>
+                </div>                   
             </div>
         </div>
     </div>
