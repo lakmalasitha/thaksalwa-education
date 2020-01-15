@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class StudentPost extends Model
 {
-    //
+    public function student(){
+
+        return $this->belongsTo(Student::class);
+        
+    }
 }

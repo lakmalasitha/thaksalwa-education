@@ -92,15 +92,6 @@ Route::post('/profile/ad/{id}/editrequest','StudentController@storeeditrequest')
 
 // Route::get('/profile/ad/{id}/editrequest', 'StudentController@showrequest');
 
-
-
-
-
-
-
-
-
-
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
@@ -116,3 +107,7 @@ Route::get('/videoHome', 'VideoController@index')->name('videoHome');
 Route::resource('/comments','CommentsController');
 Route::resource('/replies','RepliesController');
 Route::post('/replies/ajaxDelete','RepliesController@ajaxDelete');
+
+Route::post('/teachersearch','TeacherPostController@searchadvertisment');
+Route::post('/studentsearch','StudentPostController@searchrequest');
+

@@ -80,7 +80,9 @@ body{
     color: #4b4b4b !important;
     transition: background-color 1.5s;
 }
-
+/* .imagestudent{
+    margin-left: 20%;
+} */
 .setmecenter{
     margin-left: 100px;
 }

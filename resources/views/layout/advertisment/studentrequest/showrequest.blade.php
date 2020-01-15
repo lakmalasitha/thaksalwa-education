@@ -12,11 +12,11 @@
 <body>
         @include('heads.outernavibar')
         <div class="container">
-            <form action="" method="POST">
+            <form action="/studentsearch" method="POST">
                 @csrf
                 <div class="field has-addons searchagain">
                     <p class="control has-icons-left is-expanded">
-                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City,Postal Code" id="search" name="searchquery">
+                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City or Province " id="search" name="searchquery">
                         <span class="icon is-small is-left">
                             <i class="fas fa-search"></i>
                         </span>
@@ -104,7 +104,7 @@
             <div class="row">
               @foreach ($ShowAdvertisment as $item)
                   <div class="row-md-4">
-                    <div class="card">
+                    <div class="card mx-3">
                             <div class="card-content">
                               <div class="media">
                                 <div class="media-content">
@@ -120,7 +120,8 @@
                                 <a>{{$item->contactNumber}}</a>
                                 <br>
                                 <time datetime="2016-1-1">{{$item->created_at->isoFormat('LLLL')}}</time>
-                                <a href="/showrequest/{{$item->id}}"><button class="button is-success is-pulled-right">See more</button></a>
+                                <div class="my-2"></div>
+                                <a href="/showrequest/{{$item->id}}"><button class="button is-success" style="width:100%">See more</button></a>
                               </div>
                             </div>
                           </div>

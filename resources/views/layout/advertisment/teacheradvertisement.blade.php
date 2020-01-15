@@ -12,11 +12,11 @@
 <body>
         @include('heads.outernavibar')
         <div class="container">
-            <form action="" method="POST">
+            <form action="/teachersearch" method="POST">
                 @csrf
                 <div class="field has-addons searchagain">
                     <p class="control has-icons-left is-expanded">
-                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City,Postal Code" id="search" name="searchquery">
+                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City or Province" id="search" name="searchquery">
                         <span class="icon is-small is-left">
                             <i class="fas fa-search"></i>
                         </span>
@@ -32,8 +32,8 @@
                                 <div class="select is-black">
                                     <select name="stream">
                                       <option>Select Stream</option>
-                                      <option>Ordinary Level</option>
-                                      <option>Advance Level</option>
+                                      <option value="OL">Ordinary Level</option>
+                                      <option value="AL">Advance Level</option>
                                     </select>
                                 </div>
                             </div>

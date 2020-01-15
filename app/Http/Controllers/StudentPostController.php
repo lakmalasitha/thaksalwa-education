@@ -144,6 +144,33 @@ class StudentPostController extends Controller
         return view('layout.advertisment.studentrequest.studentdetail',compact('StudentPost'));
     }
 
+    public function searchrequest(Request $request)
+    {
+        $keyword = $request->input('searchquery');
+        $subject = $request->input('subject');
+        $medium =$request->input('medium');
+        $stream=$request->input('stream');
+        
+        
+
+        $ShowAdvertisment = StudentPost::where(function ($query) use ($keyword) {
+            $query->orwhere('district', 'LIKE', $keyword)
+                  ->orWhere('province', 'LIKE', $keyword);
+            })->where(function ($query) use ($subject) {
+
+                $query->where('subject', 'LIKE', $subject);
+            })->where(function ($query) use ($medium) {
+
+                $query->where('language', 'LIKE', $medium);
+            })->whereHas('student', function ($query) use ($stream) {
+
+                $query->where('stream', 'LIKE', $stream);
+    
+            })->get();
+
+            return view('layout.advertisment.studentrequest.showrequest',compact('ShowAdvertisment'));
+        
+        }
 
     /**
      * Show the form for creating a new resource.

@@ -149,41 +149,33 @@ class TeacherPostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function searchadvertisment()
+    public function searchadvertisment(Request $request)
     {
         $keyword = $request->input('searchquery');
         $subject = $request->input('subject');
         $medium =$request->input('medium');
         $stream=$request->input('stream');
+        
+        
 
-        $TeacherPost = TeacherPost::whereHas('property', function ($query) use ($stream) {
-            $query->where('noOfRooms', '>=', $room);
-        })->whereHas('property', function ($query) use ($keyword) {
-            $query->where(function ($query) use ($keyword) {
-                $query->orwhere('postalCode', 'LIKE', $keyword)
-                    ->orWhere('province', 'LIKE', $keyword)
-                    ->orWhere('city', 'LIKE', $keyword);
-            });
-        })->whereHas('property', function ($query) use ($minPrice, $maxPrice) {
+        $ShowAds = TeacherPost::where(function ($query) use ($keyword) {
+            $query->orwhere('district', 'LIKE', $keyword)
+                  ->orWhere('province', 'LIKE', $keyword);
+            })->where(function ($query) use ($subject) {
 
-            $query->whereBetween('amount', array($minPrice, $maxPrice));
-        })->whereHas('property', function ($query) {
+                $query->where('subject', 'LIKE', $subject);
+            })->where(function ($query) use ($medium) {
 
-            $query->where('availability', 'LIKE', "YES");
+                $query->where('language', 'LIKE', $medium);
+            })->whereHas('teacher', function ($query) use ($stream) {
 
-        })->where(function ($query) use ($swimmingPool) {
+                $query->where('stream', 'LIKE', $stream);
+    
+            })->get();
 
-            $query->where('swimmingPool', 'LIKE', $swimmingPool);
-        })->where(function ($query) use ($noOfFloors) {
-
-            $query->where('noOfFloors', '>=', $noOfFloors);
-        })->where(function ($query) use ($outdoor) {
-
-            $query->where('garden', 'LIKE', $outdoor);
-        })->get();
-
-        return view('results.houseresult', compact('houses'));
-    }
+            return view('layout.advertisment.teacheradvertisement',compact('ShowAds'));
+        
+        }
 
     /**
      * Store a newly created resource in storage.

@@ -14,8 +14,8 @@
             <div class="my-5"></div>
             <div class="column is-5"></div>
             <div class=" moreinfoimg column is-4 ">
-                    <figure class="image is-128x128 ">
-                            <img class="is-rounded infoimage" >
+                    <figure class="image is-128x128 text-center">
+                            <img class="is-rounded is-responsive" style="margin-left: 25%" src="/default.jpg" >
                     </figure><br>
                     <button class="button is-success">Email Here</button>
                     <button class="button is-black">Call Here</button>
@@ -29,11 +29,51 @@
         <div class="detailscolumn">
                 <p>Subject:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$StudentPost->subject}}</span></p><br>
                 <p>Medium:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$StudentPost->language}}</span></p><br>
+                <p>Stream:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$StudentPost->student->stream}}</span></p><br>
                 <p>Province: <span class="has-text-weight-semibold">{{$StudentPost->province}}</span></p><br>
                 <p>PostalCode: <span class="has-text-weight-semibold">{{$StudentPost->postalCode}}</span></p><br>
                 <p>District:<span class="has-text-weight-semibold">{{$StudentPost->district}}</span></p><br>
                 <p>ContactNumber:<span class="has-text-weight-semibold">{{$StudentPost->contactNumber}}</span></p><br>
                 <p>Email<span class="has-text-weight-semibold">{{$StudentPost->email}}</span></p><br>
+                <p>Class needed :<span class="has-text-weight-semibold">
+                    @if ($StudentPost->monday == 1)
+                        {{__('Monday, ')}}
+                    @endif
+                    @if ($StudentPost->tuesday == 1)
+                        {{__('Tuesday, ')}}
+                    @endif
+                    @if ($StudentPost->wednesday == 1)
+                        {{__('Wednesday, ')}}
+                    @endif
+                    @if ($StudentPost->thursday == 1)
+                        {{__('Thursday, ')}}
+                    @endif
+                    @if ($StudentPost->friday == 1)
+                        {{__('Friday, ')}}
+                    @endif
+                    @if ($StudentPost->saturday == 1)
+                        {{__('Saturday, ')}}
+                    @endif
+                    @if ($StudentPost->sunday == 1)
+                        {{__('Sunday')}}
+                    @endif  
+                </span></p><br>
+                <p>Class needed Time :<span class="has-text-weight-semibold">
+                    @if($StudentPost->morning == 1)
+                    {{__('Morning, ')}}
+                    @endif
+                    @if($StudentPost->afternoon == 1)
+                    {{__('Afternoon, ')}}
+                    @endif
+                    @if($StudentPost->evening == 1)
+                    {{__('Evening, ')}}
+                    @endif
+                    @if($StudentPost->night == 1)
+                    {{__('Night, ')}}
+                    @endif
+                   
+                
+                </span></p><br>
         </div>
         <hr class="hrline">
         <div class="subtitle has-text-weight-semibold">
