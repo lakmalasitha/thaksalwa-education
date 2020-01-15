@@ -25,7 +25,8 @@
                 </p>
                 <ul class="menu-list">
                   <li><a href="/myprofile">My Profile</a></li>
-                  <li><a href="/myads">My Advertisement</a></li>                  
+                  <li><a href="/myads">My Advertisement</a></li>
+                  <li><a href="">Upload Files</a></li>                                    
                   <li><a>My Inbox</a></li>
                   
                 </ul>
