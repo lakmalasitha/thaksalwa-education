@@ -30,8 +30,6 @@ class StudentPostController extends Controller
             'discription' => 'required|min:3',
             'contactNumber' => 'required',
             'email' => 'email|required',
-            'filename' => 'required',
-            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ]);
 
         $advertisement = new StudentPost;
@@ -233,8 +231,10 @@ class StudentPostController extends Controller
      * @param  \App\StudentPost  $studentPost
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StudentPost $studentPost)
+    public function delete(reqest $request)
+    
     {
-        //
+        DB::table('student_posts')->where('id', '=',request('id'))->delete();
+        return back();
     }
 }

@@ -42,9 +42,9 @@
 
       </div>
     </div>
-      {{-- <div>
+      <div style="margin-top :10%">
         @include('heads.footer')
-      </div> --}}
+      </div>
 
 </body>
 </html>

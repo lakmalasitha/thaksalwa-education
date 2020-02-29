@@ -22,7 +22,7 @@
                     <div class="buttons is-pulled-right">
                             <button class="button is-success is-pulled-right" onclick="window.open('/showrequest/{{$item->id}}','_blank');">See More</button>
                             <button class="button is-black is-pulled-right" onclick="window.open('/profile/ad/{{$item->id}}/editrequest','_blank');">Edit</button>
-                            <form action="/delete/teacherpost/{{$item->id}}" method="post">
+                            <form action="/delete/studentpost/{postid}" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$item->id}}">
                                 <button class="button is-danger is-pulled-right" type="submit">Delete</button>

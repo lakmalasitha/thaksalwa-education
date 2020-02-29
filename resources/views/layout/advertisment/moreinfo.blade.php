@@ -34,6 +34,7 @@
             <div class="column is-6">
                 <div class="detailscolumn">
                         <p>Subject:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->subject}}</span></p>
+                        {{-- <p>Stream:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->teacher->stream}}</span></p> --}}
                         <p>Stream:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->teacher->stream}}</span></p>
                         <p>Medium:&nbsp;&nbsp;&nbsp;&nbsp;<span class="has-text-weight-semibold">{{$TeacherPost->language}}</span></p>
                         <p>Institude: <span class="has-text-weight-semibold">{{$TeacherPost->institude}}</span></p>

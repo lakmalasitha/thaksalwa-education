@@ -213,9 +213,9 @@
     </div>
     </div>
 
-
-    {{-- Footer --}}
-    {{-- @include('layouts.footer') --}}
+    <div style="margin-top :10%">
+            @include('heads.footer')
+    </div>
 
 
     {{-- JavaScript Files --}}

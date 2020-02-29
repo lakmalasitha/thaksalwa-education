@@ -172,9 +172,11 @@ class TeacherPostController extends Controller
                 $query->where('stream', 'LIKE', $stream);
     
             })->get();
+            // dd($ShowAds);
 
             return view('layout.advertisment.teacheradvertisement',compact('ShowAds'));
         
+            
         }
 
     /**

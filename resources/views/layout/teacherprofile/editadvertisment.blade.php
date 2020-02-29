@@ -251,7 +251,7 @@
                         </div>
                              <div class="field is-grouped">
                                 <div class="control">
-                                  <button class="button is-success" type="submit">Add advertisement</button>
+                                  <button class="button is-success" type="submit">Update advertisement</button>
                                   <button class="button is-success">Cancel</button>
                                 </div>
                               </div>
