@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-image">
                 <figure class="image is-4by3">
-                    <img src="default.jpg" >
+                    <img src="images/default.jpg" >
                 </figure>
             </div>
             <div class="card-content">

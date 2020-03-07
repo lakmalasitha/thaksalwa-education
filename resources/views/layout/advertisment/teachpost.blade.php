@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/custom.css">
-    <title>Show Request</title>
+    <title>Show Advertisement</title>
     @include('heads.heads')
     
 </head>
 <body>
-        @include('heads.outernavibar')
+        @include('heads.navibar')
         <div class="container">
-            <form action="/studentsearch" method="POST">
+            <form action="/teachersearch" method="POST">
                 @csrf
                 <div class="field has-addons searchagain">
                     <p class="control has-icons-left is-expanded">
-                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City or Province " id="search" name="searchquery">
+                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City or Province" id="search" name="searchquery">
                         <span class="icon is-small is-left">
                             <i class="fas fa-search"></i>
                         </span>
@@ -30,10 +30,10 @@
                         <div class="field">
                             <div class="control">
                                 <div class="select is-black">
-                                    <select>
+                                    <select name="stream">
                                       <option>Select Stream</option>
-                                      <option>Ordinary Level</option>
-                                      <option>Advance Level</option>
+                                      <option value="OL">Ordinary Level</option>
+                                      <option value="AL">Advance Level</option>
                                     </select>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                         <div class="field">
                             <div class="control">
                                 <div class="select is-black">
-                                    <select>
+                                    <select name="medium">
                                       <option>Select Medium</option>
                                       <option>Sinhala Medium</option>
                                       <option>Tamil Medium</option>
@@ -101,18 +101,22 @@
             <div class="my-5"></div>
             
             <div class="container">
-                
             <div class="row">
-              @foreach ($ShowAdvertisment as $item)
+              @foreach ($ShowAds as $item)
                   <div class="col-md-4">
-                    <div class="card mx-3 my-3">
+                    <div class="card">
+                            <div class="card-image">
+                              <figure class="image is-4by3">
+                                <img src="uploads/img/{{$item->images}}" alt="Placeholder image">
+                              </figure>
+                            </div>
                             <div class="card-content">
-                                <div class="card-image">
-                                    <figure ">
-                                      <img src="/images/default.jpg" alt="Placeholder image">
-                                    </figure>
-                                  </div>
                               <div class="media">
+                                <div class="media-left">
+                                  <figure class="image is-48x48">
+                                    <img src="uploads/img/{{$item->images}}" alt="Placeholder image">
+                                  </figure>
+                                </div>
                                 <div class="media-content">
                                   <p class="title is-4">{{$item->name}}</p>
                                   <p class="subtitle is-6">{{$item->email}}</p>
@@ -123,11 +127,10 @@
                                 <br>             
                                 <h4>{{$item->subject}}</h4>
                                 <h5>{{$item->language}}</h5>
-                                <a>{{$item->contactNumber}}</a>
+                                {{str_limit(str_replace("&nbsp;",'',strip_tags($item->discription)),100)}}
                                 <br>
-                                {{-- <time datetime="2016-1-1">{{$item->created_at->isoFormat('LLLL')}}</time> --}}
-                                <div class="my-2"></div>
-                                <a href="/showrequest/{{$item->id}}"><button class="button is-success" style="width:100%">See more</button></a>
+                                <time datetime="2016-1-1">{{$item->created_at->isoFormat('LLLL')}}</time>
+                                <a href="/showmore/{{$item->id}}"><button class="button is-success is-pulled-right">See more</button></a>
                               </div>
                             </div>
                           </div>

@@ -34,16 +34,54 @@
                       @csrf
                         <div class="field">
                           <label class="label">Name</label>                      
-                            <input class="input" type="text" value="" placeholder="Your Name" name="name">                                 
+                        <input class="input" type="text" value="{{Auth::user()->name}}" placeholder="Your Name" name="name">                                 
                         </div>
                         <div class="field">
                             <label class="label">Email</label>
-                            <input class="input" type="email" value="" placeholder="Your Email" name="email">
+                            <input class="input" type="email" value="{{Auth::user()->email}}" placeholder="Your Email" name="email">
                         </div>
                         <div class="field">
                           <label class="label">NIC</label>
-                          <input class="input" type="text" value="" placeholder="NIC" name="nic">
+                          <input class="input" type="text" value="{{$details->NIC}}" placeholder="NIC" name="nic">
                         </div>
+                        <div class="field">                  
+                           <label class="label">Medium</label>                                                              
+                            <div class="field has-centered">
+                                <div class="select is-success is-full is-7">
+                                    <select name="medium">                                       
+                                        <option value="Sinhala"
+                                            @if ((Auth::user()->medium)=='sinhala')
+                                            selected
+                                                
+                                            @endif
+                                        >Sinhala</option>
+                                        <option value="English"
+                                            @if ((Auth::user()->medium)=='English')
+                                            selected
+                                                
+                                            @endif
+                                        >English</option>
+                                        <option value="Tamil"
+                                            @if ((Auth::user()->medium)=='Tamil')
+                                            selected
+                                                
+                                            @endif
+                                        >Tamil</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">                  
+                                <label class="label">Stream</label>                                                              
+                                 <div class="field has-centered">
+                                     <div class="select is-success is-full is-7">
+                                         <select name="medium">                                       
+                                             <option value="">Ordinary Level</option>
+                                             <option value="">Advance Level</option>
+                                         </select>
+                                     </div>
+                                 </div>
+                             </div>
                         <div class="field">
                             <label class="label">Address</label>                   
                             <input class="input" type="text" value="" placeholder="Address" name="address">

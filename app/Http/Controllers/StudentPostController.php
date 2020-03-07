@@ -17,9 +17,9 @@ class StudentPostController extends Controller
     {
         //
     }
-
+  
     public function addstudentrequest(Request $request){
-
+        
         $request->validate([
             'name' => 'required|max:50|min:3',
             'language' => 'required',
@@ -30,6 +30,11 @@ class StudentPostController extends Controller
             'discription' => 'required|min:3',
             'contactNumber' => 'required',
             'email' => 'email|required',
+<<<<<<< HEAD
+           
+           
+=======
+>>>>>>> master
         ]);
 
         $advertisement = new StudentPost;
@@ -42,7 +47,7 @@ class StudentPostController extends Controller
         $advertisement->district = request('district');
         $advertisement->contactNumber = request('contactNumber');
         $advertisement->email = request('email');
-
+        
         if($request->has('monday')){
             $advertisement->monday=1;
         }else{
@@ -125,10 +130,12 @@ class StudentPostController extends Controller
         }
 
         $advertisement->discription = request('discription');
-        $advertisement->save();
+        // dd($advertisement);
+         $advertisement->save();
+      
         return back();
 
-      //  dd ($request);
+     
     }
 
 
@@ -231,8 +238,12 @@ class StudentPostController extends Controller
      * @param  \App\StudentPost  $studentPost
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
+    public function delete(StudentPost $studentPost)
+=======
     public function delete(reqest $request)
     
+>>>>>>> master
     {
         DB::table('student_posts')->where('id', '=',request('id'))->delete();
         return back();

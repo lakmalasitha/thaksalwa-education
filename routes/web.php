@@ -58,6 +58,7 @@ Route::post('/delete/filedelete/{id}', 'FileController@destroy');
 Route::get('downloadfiles','FileController@downloadFunc');
 
 Route::get('/aboutus', 'PageController@aboutus');
+Route::get('/livepage', 'PageController@live');
 // Route::get('/contactus', 'PageController@contactus');
 
 
@@ -84,12 +85,27 @@ Route::get('/profilehome', 'PageController@profilehome');
 Route::get('/profile/ad/{id}/editadvertisment', 'PageController@editadvertisment');
 Route::post('/profile/ad/{id}/editadvertisment','PageController@storeeditads');
 Route::post('/delete/teacherpost/{postid}', 'TeacherPostController@delete');
+Route::get('/findstudent', 'PageController@findstudent');
 
 
-Route::get('/studentprofile', 'StudentController@studentprofile');
+
+// Route::get('/req', 'PageController@studentrequest');
+// Route::get('/studentprofile', 'StudentController@studentprofile');
+// Route::get('/myrequest', 'StudentController@showrequest');
+// Route::get('/profile/ad/{id}/editrequest', 'StudentController@editrequest');
+// Route::post('/profile/ad/{id}/editrequest','StudentController@storeeditrequest');
+
 Route::get('/myrequest', 'StudentController@showrequest');
 Route::get('/profile/ad/{id}/editrequest', 'StudentController@editrequest');
 Route::post('/profile/ad/{id}/editrequest','StudentController@storeeditrequest');
+Route::get('/studentprofile', 'StudentController@studentprofile');
+Route::get('/editacc', 'StudentController@editetails');
+Route::get('/changepass', 'StudentController@changedetails');
+Route::post('/delete/studentpost/{postid}', 'StudentPostController@delete');
+Route::get('/findteacher', 'StudentController@findteacher');
+
+
+
 
 // Route::get('/profile/ad/{id}/editrequest', 'StudentController@showrequest');
 
@@ -112,7 +128,12 @@ Route::post('/replies/ajaxDelete','RepliesController@ajaxDelete');
 Route::post('/teachersearch','TeacherPostController@searchadvertisment');
 Route::post('/studentsearch','StudentPostController@searchrequest');
 
+<<<<<<< HEAD
+Route::get('/payment', 'PaymentController@index');
+Route::post('/charge', 'PaymentController@charge');
+=======
 Route::get('/admin','AdminController@index');
 Route::get('/adminlogin','AdminController@index');
+>>>>>>> master
 
 

@@ -101,7 +101,7 @@
 
         </div>
         <div class="is-centered has-text-centered">
-            <a class="button is-invertedis-uppercase is-outlined signupbuttonloginpage" href="register">&nbsp; &nbsp;
+            <a class="button is-invertedis-uppercase is-outlined signupbuttonloginpage" href="/reprofile">&nbsp; &nbsp;
                 &nbsp; &nbsp; Sign Up &nbsp; &nbsp; &nbsp; &nbsp;</a>
         </div>
 

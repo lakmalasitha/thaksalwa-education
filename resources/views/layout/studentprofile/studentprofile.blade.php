@@ -24,8 +24,10 @@
                   General
                 </p>
                 <ul class="menu-list">
+                  <li><a href="/home">Home</a></li>
                   <li><a href="/myprofile">My Profile</a></li>
-                  <li><a href="/myrequest">My Advertisement</a></li>                  
+                  <li><a href="/myrequest">My Advertisement</a></li> 
+                  <li><a href="/downloadfiles">My Advertisement</a></li>                  
                   <li><a>My Inbox</a></li>
                   
                 </ul>
@@ -33,8 +35,8 @@
                   Administration
                 </p>
                 <ul class="menu-list">
-                  <li><a href="/editprofile">Edit Account</a></li>
-                  <li><a href="/changepassword">Change Password</a></li>
+                  <li><a href="/editacc">Edit Account</a></li>
+                  <li><a href="/changepass">Change Password</a></li>
                   <li><a>Delete Account</a></li>                     
                 </ul>
                 <p class="menu-label">
@@ -47,12 +49,19 @@
                           
 
        </div>
-       @if(Request::is('myrequest'))
+       @if(Request::is('myprofile'))
+          @include('layout.studentprofile.studentprofile')
+       @elseif(Request::is('editacc'))
+          @include('layout.studentprofile.editaccount')
+       @elseif(Request::is('changepass'))
+          @include('layout.studentprofile.changepass')
+       @elseif(Request::is('myrequest'))
           @include('layout.studentprofile.treadrequset')
        {{-- @elseif(Request::is('editprofile'))
           @include('layout.studentprofile.editrequest') --}}
        @elseif(Request::is('profile/ad/*/editrequest'))
           @include('layout.studentprofile.editrequest')
+      
        @else
        
       @endif    
