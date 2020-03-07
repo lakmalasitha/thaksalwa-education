@@ -10,7 +10,7 @@
     
 </head>
 <body>
-        @include('heads.outernavibar')
+        @include('heads.navibar')
         <div class="container">
             <form action="/studentsearch" method="POST">
                 @csrf

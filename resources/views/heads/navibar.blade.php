@@ -130,14 +130,14 @@
 												</div>
 											</li>
 											<li class="nav-item dropdown">
-												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="#" " aria-haspopup="true" aria-expanded="false">Student Request</a>
+												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/findstudent" >Student Request</a>
 												<div class="dropdown-menu mainNavDropdown text-uppercase">						
 													<ul class="list-unstyled navDropdownList">
 													</ul>
 												</div>
 											</li>
 											<li class="nav-item dropdown">
-												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/uplodefiles">Live</a>
+												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="">Live</a>
 												<div class="dropdown-menu mainNavDropdown text-uppercase">
 												</div>
 											</li>
@@ -287,14 +287,14 @@
 											</div>
 										</li>
 										<li class="nav-item dropdown">
-											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="#" " aria-haspopup="true" aria-expanded="false">View Teachers</a>
+											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/findteacher">View Teachers</a>
 											<div class="dropdown-menu mainNavDropdown text-uppercase">						
 												<ul class="list-unstyled navDropdownList">
 												</ul>
 											</div>
 										</li>
 										<li class="nav-item dropdown">
-											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/downloadfiles">Live</a>
+											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="">Live</a>
 											<div class="dropdown-menu mainNavDropdown text-uppercase">
 											</div>
 										</li>

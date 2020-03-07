@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\TeacherPost;
+use App\StudentPost;
+use App\Teacher;
 use Intervention\Image\Facades\Image;
 
 class PageController extends Controller
 {
     public function aboutus(){
         return view('layout.aboutus');
+    }
+    public function live(){
+        return view('layout.liveform');
     }
     public function contactus(){
         return view('layout.contactus');
@@ -26,21 +31,57 @@ class PageController extends Controller
         
 
     }
+    public function studentrequest(StudentPost $StudentPost){
+
+        $studentID = Auth::user()->id;
+        $StudentPost=StudentPost::where(function($query) use($studentID){
+            $query->where('student_id','=',$studentID);
+        })->paginate(3);
+
+        return view('layout.studentprofile.studentprofile',compact('StudentPost'));
+        
+
+    }
     public function editprofile(){
-        return view('layout.teacherprofile.profilehome');
+        // return view('layout.teacherprofile.profilehome');
+
+        // $userid = Auth::user()->id;
+        // dd(Auth::user()->id);
+        if ((Auth::user()->role)=='teacher') {
+            $teacherID = Auth::user()->id;
+            $details=Teacher::where(function($query) use($teacherID){
+                $query->where('user_id','=',$teacherID);
+            });
+
+            return view('layout.teacherprofile.profilehome',compact('details'));
+        }
     }
     public function changepassword(){
         return view('layout.teacherprofile.profilehome');
     }
+
     public function myprofile(){
         return view('layout.teacherprofile.profilehome');
     }
+
     public function profilehome(){
         return view('layout.teacherprofile.profilehome');
     }
+
+    public function findstudent(){
+        $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->paginate(6);
+        return view('layout.advertisment.studentrequest.studentpost',compact('ShowAdvertisment'));
+    }
+
     public function editadvertisment(TeacherPost $id){
         
         $teacherPost = TeacherPost::find($id->id);
+        //dd($teacherPost);
+        return view('layout.teacherprofile.profilehome', compact('teacherPost'));
+    }
+    public function editteacherprofile(TeacherPost $id){
+        
+        $teacherdetails = TeacherPost::find($id->id);
         //dd($teacherPost);
         return view('layout.teacherprofile.profilehome', compact('teacherPost'));
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\TeacherPost;
 use Illuminate\Http\Request;
 use App\StudentPost;
 use Auth;
@@ -41,9 +42,18 @@ class StudentController extends Controller
     }
     public function studentprofile(){
         return view('layout.studentprofile.studentprofile');
-
-        
     }
+    public function changedetails(){
+        return view('layout.studentprofile.studentprofile');
+    }
+    public function editetails(){
+        return view('layout.studentprofile.studentprofile');
+    }
+    public function findteacher(){
+        $ShowAds = TeacherPost::orderBy('created_at','desc')->get();
+        return view('layout.advertisment.teachpost',compact('ShowAds'));
+    }
+
     public function showrequest(StudentPost $StudentPost){
 
         $studentID = Auth::user()->id;
@@ -53,8 +63,6 @@ class StudentController extends Controller
      
 
         return view('layout.studentprofile.studentprofile',compact('StudentPost'));
-        
-
     }
     public function editrequest(StudentPost $id){
         

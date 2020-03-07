@@ -24,9 +24,10 @@
                   General
                 </p>
                 <ul class="menu-list">
+                  <li><a href="/home">Home</a></li>
                   <li><a href="/myprofile">My Profile</a></li>
                   <li><a href="/myads">My Advertisement</a></li>
-                  <li><a href="">Upload Files</a></li>                                    
+                  <li><a href="/uplodefiles">Upload Files</a></li>                                    
                   <li><a>My Inbox</a></li>
                   
                 </ul>
@@ -48,7 +49,7 @@
                           
 
        </div>
-       @if(Request::is('myprofile'))
+       @if(Request::is('studentprofile'))
           @include('layout.teacherprofile.myprofile')
         @elseif(Request::is('editprofile'))
            @include('layout.teacherprofile.editprofile')
