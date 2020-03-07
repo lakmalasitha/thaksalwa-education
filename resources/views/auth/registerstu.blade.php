@@ -205,9 +205,9 @@
     </div>
 
 
-    {{-- Footer --}}
-    {{-- @include('layouts.footer') --}}
-
+    <div style="margin-top :10%">
+            @include('heads.footer')
+    </div>
 
     {{-- JavaScript Files --}}
     <script src="/js/jquery-3.3.1.min.js"></script>

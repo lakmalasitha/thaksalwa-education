@@ -104,7 +104,7 @@
 								<div class="collapse navbar-collapse mainNavCollapse" id="pageMainNavCollapse">
 									<ul class="navbar-nav pageMainNavigation justify-content-md-end">
 										<li class="nav-item dropdown">
-											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only">(current)</span></a>
+											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/" role="button">Home</a>
 											<div class="dropdown-menu mainNavDropdown text-uppercase">
 												
 												{{-- <ul class="list-unstyled navDropdownList">

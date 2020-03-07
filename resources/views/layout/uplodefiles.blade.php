@@ -77,7 +77,7 @@
                                 <input type="file" class="form-control" id="inputEmail4" name="upload_file">
                               </div>
                             </div>                          
-                          {{-- <button type="submit" class="btn btn-success" style="width:150px;height:70px;">Save File</button> --}}
+                          <button type="submit" class="btn btn-success" style="width:150px;height:70px;">Save File</button>
                         </form>
                     </div>
              </div>

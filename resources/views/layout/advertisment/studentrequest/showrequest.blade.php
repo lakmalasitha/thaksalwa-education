@@ -104,8 +104,8 @@
                 
             <div class="row">
               @foreach ($ShowAdvertisment as $item)
-                  <div class="row-md-4">
-                    <div class="card mx-3">
+                  <div class="col-md-4">
+                    <div class="card mx-3 my-3">
                             <div class="card-content">
                                 <div class="card-image">
                                     <figure ">

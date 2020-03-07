@@ -42,9 +42,9 @@
 
       </div>
     </div>
-    
+    <div style="margin-top:10%">
         @include('heads.footer')
-
+    </div>
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/fontawesome.js"></script>
