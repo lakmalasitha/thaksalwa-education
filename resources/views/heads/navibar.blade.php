@@ -137,7 +137,7 @@
 												</div>
 											</li>
 											<li class="nav-item dropdown">
-												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="">Live</a>
+												<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/payment">Live</a>
 												<div class="dropdown-menu mainNavDropdown text-uppercase">
 												</div>
 											</li>
@@ -294,7 +294,7 @@
 											</div>
 										</li>
 										<li class="nav-item dropdown">
-											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="">Live</a>
+											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/payment">Live</a>
 											<div class="dropdown-menu mainNavDropdown text-uppercase">
 											</div>
 										</li>

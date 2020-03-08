@@ -128,12 +128,8 @@ Route::post('/replies/ajaxDelete','RepliesController@ajaxDelete');
 Route::post('/teachersearch','TeacherPostController@searchadvertisment');
 Route::post('/studentsearch','StudentPostController@searchrequest');
 
-<<<<<<< HEAD
-Route::get('/payment', 'PaymentController@index');
-Route::post('/charge', 'PaymentController@charge');
-=======
 Route::get('/admin','AdminController@index');
 Route::get('/adminlogin','AdminController@index');
->>>>>>> master
 
-
+Route::get('/payment', 'PaymentController@index');
+Route::post('/charge', 'PaymentController@charge');
