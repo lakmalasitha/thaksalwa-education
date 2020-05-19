@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePaymentsTable extends Migration
+class CreateLiveSessionDataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreatePaymentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('live_session_data', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('payment_id');
-            $table->string('payer_email');
-            $table->float('amount', 10, 2);
-            $table->string('currency');
-            $table->string('payment_status');
+            $table->string('teacher_id');
+            $table->string('channel_id');
+            $table->string('subject_name');
+            $table->string('stream');
+            $table->string('medium');
+            $table->string('grade');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreatePaymentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('live_session_data');
     }
 }

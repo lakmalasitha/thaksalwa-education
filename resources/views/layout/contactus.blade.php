@@ -19,20 +19,26 @@
 
         <div class="contactusimage">
             <div class="my-5"></div>
+            
             <div class="container">
+
                 <div class="columns">
+
                         <div class="column is-4">
                                 <div class="field">
-                                        <label class="label has-text-centered is-capitalized">Drop your Message</label>
-                                      </div>
+                                    <label class="label has-text-centered is-capitalized">Drop your Message</label>
+                                </div>
+
                             <form action="{{ route('createContact') }}" method="POST">
                                 @csrf
+
                                 <div class="field">
                                     <label class="label">Name</label>
                                     <div class="control">
                                       <input class="input" type="text" name="name" placeholder="Enter Your Name" reqired>
                                     </div>
-                                  </div>
+                                </div>
+
                                   <div class="field">
                                     <label class="label">Email</label>
                                     <div class="control has-icons-left has-icons-right">
@@ -44,17 +50,16 @@
                                         <i class="fas fa-exclamation-triangle"></i>
                                       </span>
                                     </div>
-                                    <!-- <p class="help is-danger">This email is invalid</p> -->
                                   </div>
                                   
                                   <div class="field">
-                                    <label class="label" name="inquary[]">Type Of Inquary</label >
+                                    <label class="label" name="inquary">Type Of Inquary</label >
                                     <div class="control">
                                       <div class="select">
                                         <select>
-                                          <option>Service</option>
-                                          <option>web site</option>
-                                          <option>colours</option>
+                                          <option value="services">Service</option>
+                                          <option vlaue="website">web site</option>
+                                          <option vlaue="colors">colours</option>
                                         </select>
                                       </div>
                                     </div>
@@ -66,6 +71,7 @@
                                       <textarea class="textarea" name="message" placeholder="Textarea" reqired></textarea>
                                     </div>
                                   </div>
+
                                   <div class="field is-grouped">
                                     <div class="control">
                                       <button class="button is-link" type="submit">Send</button>
@@ -88,6 +94,7 @@
             </div>
 
         </div>
+
         <div>
             @include('heads.footer')
         </div>

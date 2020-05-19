@@ -6,6 +6,8 @@ use App\LiveVideo\Comment;
 use App\LiveVideo\Reply;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Teacher;
+use DB;
 
 class CommentsController extends Controller
 {
@@ -19,58 +21,17 @@ class CommentsController extends Controller
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function getTeacherData(){
+        //get teacher data
+        $teacherData = DB::table('teachers')->select('user_id','medium','stream')->first();
+        // dd($teacherData);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        if (Auth::check()) {
-            Comment::create([
-                'name' => Auth::user()->name,
-                'comment' => $request->input('comment'),
-                'user_id' => Auth::user()->id
-            ]);
-
-            return redirect()->route('videoHome')->with('success','Comment Added successfully..!');
-        }else{
-            return back()->withInput()->with('error','Something wrong');
-        }
-
-
+    public function show(){
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Comment $comment)
+    public function edit($id)
     {
         //
     }
@@ -79,10 +40,10 @@ class CommentsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -90,26 +51,11 @@ class CommentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
-        if (Auth::check()) {
-
-            $reply = Reply::where(['comment_id'=>$comment->id]);
-            $comment = Comment::where(['user_id'=>Auth::user()->id, 'id'=>$comment->id]);
-            if ($reply->count() > 0 && $comment->count() > 0) {
-                $reply->delete();
-                $comment->delete();
-                return 1;
-            }else if($comment->count() > 0){
-                $comment->delete();
-                return 2;
-            }else{
-                return 3;
-            }
-
-        }    
+        //
     }
 }

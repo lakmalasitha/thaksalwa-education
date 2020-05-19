@@ -120,11 +120,6 @@ Route::get('/register/teacher', 'RegisterHelp@registerTeacher')->name('home');
 Route::get('/contactus', 'ContactFormController@create')->name('createContact');
 Route::post('/contactus', 'ContactFormController@store');
 
-Route::get('/videoHome', 'VideoController@index')->name('videoHome');
-Route::resource('/comments','CommentsController');
-Route::resource('/replies','RepliesController');
-Route::post('/replies/ajaxDelete','RepliesController@ajaxDelete');
-
 Route::post('/teachersearch','TeacherPostController@searchadvertisment');
 Route::post('/studentsearch','StudentPostController@searchrequest');
 
@@ -133,3 +128,11 @@ Route::get('/adminlogin','AdminController@index');
 
 Route::get('/payment', 'PaymentController@index');
 Route::post('/charge', 'PaymentController@charge');
+
+//ishanka
+Route::get('/student_live', 'LiveVideoController@getvideo')->name('videoHome');
+Route::get('/teacher_live', 'LiveVideoController@teacherGoLive');
+Route::get('/teacher_redirect_youtube', 'LiveVideoController@teacherRedirectYoutube');
+Route::get('/complanit', 'LiveVideoController@complaint')->name('complaint');
+Route::get('/test', 'LiveVideoController@getLiveSessionData');
+

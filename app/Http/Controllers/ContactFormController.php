@@ -22,23 +22,22 @@ class ContactFormController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'message' => 'required',
+            
         ]);
 
-        // dd($data);
+        
 
         $contact = new Contact();
         $contact->name = request('name');
         $contact->email = request('email');
+        $contact->inquary = 'website';
         $contact->message = request('message');
         $contact->save();
 
         //send email
 
         Mail::to($contact->email)->send(new ContactFormMail($data));
-        return view('contact.thankYou');
-
-       
-        
+        return view('contact.thankYou');  
     }
 
     public function messages()

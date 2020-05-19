@@ -13,9 +13,4 @@ class Comment extends Model
         'comment',
         'user_id'
     );
-
-
-    public function replies(){
-    	return $this->hasMany('App\LiveVideo\Reply');
-    }
 }
