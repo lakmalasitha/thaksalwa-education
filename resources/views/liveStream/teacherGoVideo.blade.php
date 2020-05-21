@@ -87,7 +87,7 @@
         <div class="col-4">
             <u>Special Reminder to Redirect into Youtube Live</u>
                 <ul style="list-style-type:square;">
-                    <li>Add Your Own Youtube Channel Id in Channel Id Field</li>
+                    <li>Use Institute's Youtube Channel Id as as Youtube Channel Id - UCWoZo56B35bhorR-ZLuLmlQ</li>
                     <li>Live Video Title Convention in Youtube- Subject name/Grade/Medium</li>
                 </ul>
         </div>
