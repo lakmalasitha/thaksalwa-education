@@ -134,5 +134,5 @@ Route::get('/student_live', 'LiveVideoController@getvideo')->name('videoHome');
 Route::get('/teacher_live', 'LiveVideoController@teacherGoLive');
 Route::get('/teacher_redirect_youtube', 'LiveVideoController@teacherRedirectYoutube');
 Route::get('/complanit', 'LiveVideoController@complaint')->name('complaint');
-Route::get('/test', 'LiveVideoController@getLiveSessionData');
+Route::get('/test', 'LiveVideoController@index');
 

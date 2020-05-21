@@ -27,7 +27,8 @@
                   <li><a href="/home">Home</a></li>
                   <li><a href="/myprofile">My Profile</a></li>
                   <li><a href="/myrequest">My Advertisement</a></li> 
-                  <li><a href="/downloadfiles">My Advertisement</a></li>                  
+                  <li><a href="/downloadfiles">My Advertisement</a></li>      
+                  <li><a href="/student_live">Join Live Sessoin</a></li>             
                   <li><a>My Inbox</a></li>
                   
                 </ul>

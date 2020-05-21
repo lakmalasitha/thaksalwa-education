@@ -35,7 +35,9 @@ class LiveVideoController extends Controller
      */
     public function index()
     {
-        
+        $user = auth()->user();
+            $teacherId = $user->id;
+            dd($teacherId);
   
     }
     
@@ -157,7 +159,7 @@ class LiveVideoController extends Controller
         $API_URL = 'https://www.googleapis.com/youtube/v3/';
         $API_KEY = 'AIzaSyColal1eRl5zI1f35h_Z5-EZZVvON_gHL8';
 
-        $channelId = 'UC4pp5wGmsjQaCuNesaYnwgg';
+        $channelId = 'UCWoZo56B35bhorR-ZLuLmlQ';
 
         $parameter = [
             'id' => $channelId,
