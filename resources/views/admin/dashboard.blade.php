@@ -57,8 +57,8 @@
                             </ul>
                         </li> --}}
                         <li><a>Change Password</a></li>
-                        <li><a>Manage Teachers</a></li>
-                        <li><a>Manage Students</a></li>
+                        <li><a href="/teacherManage">Manage Teachers</a></li>
+                        <li><a href="/studentManage">Manage Students</a></li>
                     </ul>
                     <p class="menu-label"> Transactions</p>
                     <ul class="menu-list">
@@ -94,8 +94,9 @@
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">439k</p>
-                                <p class="subtitle">Advertisment</p>
+                                <p class="title">{{count($complains)}}</p>
+                                <p class="subtitle">Complains</p>
+                                <a href="/viewComplains"><button class="button is-success">View Complains</button></a>
                             </article>
                         </div>
                         <div class="tile is-parent">
@@ -118,11 +119,11 @@
                         </div>
                     </div>
                 </section>
-                <div class="columns">
-                </div>
             </div>
         </div>
+        
     </div>
+    
     <script async type="text/javascript" src="../js/bulma.js"></script>
 </body>
 

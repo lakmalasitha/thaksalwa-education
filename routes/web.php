@@ -48,6 +48,20 @@ Route::get('/uplodefiles',function(){
 Route::get('/downloadfiles',function(){
     return view('layout.downloadfiles');
 });
+// Students complain route
+Route::get('/studentprofile/complain',function(){
+    return view('layout.studentprofile.studentcomplain');
+});
+// submit complains
+Route::post('complain_upload','ComplainsController@store');
+Route::post('/delete/deleteComplain/{id}', 'ComplainsController@complainRemove');
+Route::get('/viewComplains','AdminController@complains');
+
+Route::get('/studentManage','AdminController@students');
+Route::post('/delete/deletestudent/{id}', 'AdminController@studentRemove');
+Route::get('/teacherManage','AdminController@teachers');
+Route::post('/delete/deleteteacher/{id}', 'AdminController@teacherRemove');
+
 // Route::get('/myads',function(){
 //     return view('layout.profile.myadvertisment');
 // });

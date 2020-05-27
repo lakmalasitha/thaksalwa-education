@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Admin;
 use Illuminate\Http\Request;
-
+use App\Complain;
+use App\Student;
+use App\User;
+use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     /**
@@ -14,9 +18,39 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $complains = Complain::orderBy('created_at','desc')->get();
+        return view('admin.dashboard', compact('complains'));
+       
     }
 
+    public function complains()
+    {
+        $complains = Complain::orderBy('created_at','desc')->get();
+        return view('admin.complainsView', compact('complains'));
+    }
+
+    public function students()
+    {
+        $students = User::Where('role','=','student')->get();
+        return view('admin.studentView', compact('students'));
+    }
+    public function teachers()
+    {
+        $teachers = User::Where('role','=','teacher')->get();
+        return view('admin.teacherView', compact('teachers'));
+    }
+    public function studentRemove($id)
+    {
+        $student = User::find($id);
+        $student->delete();
+        return back()->with('success', 'Student removed successfully');
+    }
+    public function teacherRemove($id)
+    {
+        $teacher = User::find($id);
+        $teacher->delete();
+        return back()->with('success', 'Teacher removed successfully');
+    }
     /**
      * Show the form for creating a new resource.
      *
