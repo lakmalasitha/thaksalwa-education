@@ -43,7 +43,7 @@
                     <div id="card-errors" role="alert"></div>
                 </div>
                 <div class="payment">
-                        <button class="button is-black is centered">Sbmit Payment</button>
+                        <button class="button is-black is centered">Submit Payment</button>
                 </div>
                
                 {{ csrf_field() }}
