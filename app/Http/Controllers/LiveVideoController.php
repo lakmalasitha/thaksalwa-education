@@ -197,7 +197,7 @@ class LiveVideoController extends Controller
             $my_videos = collect($my_videos)->chunk(5);
         }
     }
-    if($pay_satus == 1 && $logged_student_id == $student_id){
+    if($pay_satus == "succeed" && $logged_student_id == $student_id){
        
         return view('liveStream.youtube')->with(['video'=>$my_videos,'session_data' => $data_to_display]);  
     }else{

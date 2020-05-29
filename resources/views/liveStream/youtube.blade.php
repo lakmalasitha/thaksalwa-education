@@ -28,7 +28,7 @@
     <div class="row">
         <div class="col">
             <h5>Live Now</h5><hr>
-                <iframe id ="my_player" type="text/html" width="440" height="360" src="https://www.youtube.com/embed/live_stream?channel=UC4pp5wGmsjQaCuNesaYnwgg" 
+                <iframe id ="my_player" type="text/html" width="440" height="360" src="https://www.youtube.com/embed/live_stream?channel=UCWoZo56B35bhorR-ZLuLmlQ" 
                     frameborder="0" &modestbranding=1 allowfullscreen></iframe>
 
                 <p class="">Subject Name:{{$session_data[0]}}</p>
