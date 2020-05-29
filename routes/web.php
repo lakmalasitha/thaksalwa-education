@@ -61,7 +61,12 @@ Route::get('/studentManage','AdminController@students');
 Route::post('/delete/deletestudent/{id}', 'AdminController@studentRemove');
 Route::get('/teacherManage','AdminController@teachers');
 Route::post('/delete/deleteteacher/{id}', 'AdminController@teacherRemove');
+Route::post('/registerStudent','AdminController@addStudent');
+Route::post('/registerTeacher','AdminController@addteacher');
 
+Route::get('/studentsProfile/{id}', 'AdminController@studentView');
+Route::get('/teachersProfile/{id}', 'AdminController@teacherView');
+//Route::get('/studentsProfile/{id}', 'AdminController@studentDetails');
 // Route::get('/myads',function(){
 //     return view('layout.profile.myadvertisment');
 // });

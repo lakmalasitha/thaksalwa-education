@@ -73,7 +73,7 @@
                                     <form action="/delete/deleteComplain/{{$complain->id}}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$complain->id}}">
-                                        <button class="button is-danger " type="submit">Address</button>
+                                        <button class="button is-danger" onclick="return confirm('Are you sure?')" type="submit">Address</button>
                                     </form>
                                 </td>
                             </tr>

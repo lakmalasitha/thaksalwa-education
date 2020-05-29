@@ -101,14 +101,16 @@
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">59k</p>
-                                <p class="subtitle">Requests</p>
+                                <p class="title">{{count($Students)}}</p>
+                                <p class="subtitle">Students</p>
+                                <a href="/studentManage"><button class="button is-success">Students</button></a>
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">3.4k</p>
-                                <p class="subtitle">Register</p>
+                                <p class="title">{{count($Teachers)}}</p>
+                                <p class="subtitle">Teachers</p>
+                                <a href="/teacherManage"><button class="button is-success">Teachers</button></a>
                             </article>
                         </div>
                         <div class="tile is-parent">
