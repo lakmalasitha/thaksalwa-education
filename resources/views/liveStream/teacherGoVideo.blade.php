@@ -29,39 +29,60 @@
                                     </span> @endif
                         </div>
 
-                        <div class="field">
-                                <label class="label" >Grade</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="grade">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="columns">
+                                    <div class="column">
+                                    <label class="label" >Grade</label>
                                     </div>
-                                    @if ($errors->has('name'))
-                                    <span>
-                                        <strong class="has-text-danger">{{ $errors->first('name') }}</strong>
-                                    </span> @endif
-                        </div>
+                                    <div class="column">
+                                        <div class="field has-centered">
+                                            <div class="select is-success is-full is-7">
+                                                <select name="grade">                                      
+                                                        <option value="6">Grade 6</option>
+                                                        <option value="7">Grade 7</option>
+                                                        <option value="8">Grade 8</option>
+                                                        <option value="9">Grade 9</option>
+                                                        <option value="10">Grade 10</option>
+                                                        <option value="11">Grade 11</option>
+                                                        <hr class="dropdown-divider">
+                                                        <option value="12">Grade 12</option>
+                                                        <option value="13">Grade 13</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="field">
-                                <label class="label" >Stream-OL/AL</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="stream">
-                                    </div>
-                                    @if ($errors->has('name'))
-                                    <span>
-                                        <strong class="has-text-danger">{{ $errors->first('name') }}</strong>
-                                    </span> @endif
-                        </div>
-
-                        <div class="field">
-                                <label class="label" >Medium-Sinhala/English</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="medium">
-                                    </div>
-                                    @if ($errors->has('name'))
-                                    <span>
-                                        <strong class="has-text-danger">{{ $errors->first('name') }}</strong>
-                                    </span> @endif    
+                            <div class="column">
+                            </div>
                         </div>
                         
+                        <div class="columns">
+                            <div class="column">
+                                    <div class="columns">
+                                        <div class="column">
+                                        <label class="label" >Medium</label>
+                                        </div>
+                                        <div class="column">
+                                            <div class="field has-centered">
+                                                <div class="select is-primary is-full is-7">
+                                                    <select name="medium">                                       
+                                                        <option value="Sinhala">Sinhala</option>
+                                                        <option value="English">English</option>
+                                                        <option value="Tamil">Tamil</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+
+                                <div class="column">
+                                </div>
+                        </div>
+
                         <div class="field">
                                 <label class="label" >Youtube Channel Id</label>
                                     <div class="control">

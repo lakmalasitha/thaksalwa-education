@@ -41,7 +41,7 @@
                 
                         <div class="navbar-dropdown">
                             <a class="navbar-item">
-                            Live
+                            Payments
                             </a>
                             <a class="navbar-item">
                             Contact us
