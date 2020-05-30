@@ -16,6 +16,12 @@
 <body>
     <div class="columns panelboard">
       <div class="column is-one-fifth sidebar">
+                  @include('heads.outernavibar')
+                    @if(session()->has('message'))
+                        <div class="alert alert-warning">
+                            {{ session()->get('message') }}
+                        </div>
+                  @endif
           <figure class="image is-128x128 profileimage">
             <img class="is-rounded " src="/images/1.jpg">
           </figure>
@@ -27,9 +33,9 @@
                   <li><a href="/home">Home</a></li>
                   <li><a href="/myprofile">My Profile</a></li>
                   <li><a href="/myrequest">My Advertisement</a></li> 
-                  <li><a href="/downloadfiles">My Advertisement</a></li>      
-                  <li><a href="/student_live">Join Live Sessoin</a></li>       
+                  <li><a href="/downloadfiles">My Advertisement</a></li>           
                   <li><a>My Inbox</a></li>
+                  </hr>
                   
                 </ul>
                 <p class="menu-label">
@@ -39,6 +45,22 @@
                   <li><a href="/editacc">Edit Account</a></li>
                   <li><a href="/changepass">Change Password</a></li>
                   <li><a>Delete Account</a></li>                     
+                </ul>
+                <p class="menu-label">
+                  Live Session
+                </p>
+                <ul class="menu-list">
+                  <li><a>Join with Live Session</a></li>
+                  <form id="" action="/verify_password" method="GET">
+                  <div class="field">
+                    <div class="control">
+                      <input class="input is-medium" type="text" name="confPassword" placeholder="Enter Your Password Here">
+                    </div>
+                    &nbsp
+                    <div class="control">
+                      <button class="button is-success">Join with Live Session</button>
+                    </div>
+                  </div>
                 </ul>
                 <p class="menu-label">
                   Other

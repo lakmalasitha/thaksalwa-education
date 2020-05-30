@@ -148,7 +148,7 @@
 										<li class="nav-item dropdown">
 										@guest
 										@else
-											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/student_live">Live</a>
+											<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="/student_live">Payments</a>
 										@endguest
 											<div class="dropdown-menu mainNavDropdown text-uppercase">
 												{{-- <ul class="list-unstyled navDropdownList">

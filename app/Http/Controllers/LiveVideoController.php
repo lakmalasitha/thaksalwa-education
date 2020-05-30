@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\LiveSessionData;
 use Illuminate\Support\Facades\Auth;
 use App\LiveVideo\Comment;
+use Illuminate\Support\Facades\Hash;
+use App\User;
 use Redirect;
 use Session;
 use View;
@@ -40,7 +42,7 @@ class LiveVideoController extends Controller
             dd($teacherId);
   
     }
-    
+
     public function teacherGoLive()
     {
         return view('liveStream.teacherGoVideo');
@@ -50,6 +52,18 @@ class LiveVideoController extends Controller
         $user = auth()->user();
         $user_email = $user->email;
         return $user_email;
+    }
+
+    public function verifyPassword(Request $request){
+        $user = auth()->user();
+        $reqPwd = $request->confPassword;
+        $userPwd = $user->password;
+        // dd($reqPwd);
+        if (!Hash::check($reqPwd, $userPwd)){
+            return redirect()->back()->with('message', 'Password confirmation failed. Try again!');
+           }else{
+            return view('liveStream.youtube');
+        }
     }
 
     public function getUserID(){
@@ -68,21 +82,33 @@ class LiveVideoController extends Controller
     public function teacherRedirectYoutube(Request $request){ 
         $role_id = $this->getUserID();
         $channel_id = $request->input('channelId');
+        $grade = $request->input('grade');
+
+        // $medium = $request->input('medium');
         // if($role_id == 2){
             $user = auth()->user();
             $teacherId = $user->id;
+
+           if ($grade == '12' || $grade == '13') {
+            $stream = "AL";
+           } else {
+            $stream = "OL"; 
+           }
+           
             LiveSessionData::create([
                 'teacher_id' => $teacherId,
                 'channel_id' => $request->input('channelId'),
                 'subject_name' => $request->input('subjectName'),
                 'grade' => $request->input('grade'),
-                'stream' => $request->input('stream'),
+                'stream' => $stream,
                 'medium' => $request->input('medium'),
                
             ]);
 
             $url="https://www.youtube.com/channel/".$channel_id;
             return Redirect::to($url);
+
+            // dd($medium);
         // }else{
         //     echo "Something Wrong";
         // } 
@@ -203,7 +229,8 @@ class LiveVideoController extends Controller
     }else{
         return redirect()->back();
     }
-    }
+    // return view('liveStream.youtube');
+}
 
     public function Complaint(Request $request){
         $logged_student_id = Auth::id();
