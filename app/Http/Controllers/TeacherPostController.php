@@ -254,23 +254,6 @@ class TeacherPostController extends Controller
             return null;
         }
 
-        
-
-        // $ShowAds = TeacherPost::where(function ($query) use ($keyword) {
-        //     $query->orwhere('district', 'LIKE', $keyword)
-        //           ->orWhere('province', 'LIKE', $keyword);
-        //     })->where(function ($query) use ($subject) {
-        //         $query->where('subject', 'LIKE', $subject);
-        //     })->where(function ($query) use ($medium) {
-        //         $query->where('language', 'LIKE', $medium);
-        //     })->whereHas('teacher', function ($query) use ($stream) {
-
-        //         $query->where('stream', 'LIKE', $stream);
-    
-        //     })->get();
-            
-           dd($ShowAds);
-
             return view('layout.advertisment.teacheradvertisement',compact('ShowAds'));
         
             

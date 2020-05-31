@@ -69,8 +69,11 @@ class PageController extends Controller
     }
 
     public function findstudent(){
+        // $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->paginate(6);
+        // return view('layout.advertisment.studentrequest.studentpost',compact('ShowAdvertisment'));
+
         $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->paginate(6);
-        return view('layout.advertisment.studentrequest.studentpost',compact('ShowAdvertisment'));
+        return view('layout.advertisment.studentrequest.showrequest',compact('ShowAdvertisment'));
     }
 
     public function editadvertisment(TeacherPost $id){
