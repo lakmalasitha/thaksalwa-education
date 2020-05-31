@@ -17,7 +17,7 @@
         <form action="/studentreq" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="">
-                    <input class="input" type="text" value="{{ Auth::user()->id }}" name="student_id" hidden>
+                    <input class="input" type="text" value="{{ App\Student::returnStudentId(Auth::user()->id) }}" name="student_id" hidden>
                 <div class="field">
                         <label class="label" >Name</label>
                             <div class="control">
