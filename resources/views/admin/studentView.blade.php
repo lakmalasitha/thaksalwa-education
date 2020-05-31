@@ -99,7 +99,7 @@
                             <input
                                 class="input {{ $errors->has('name') ? ' is-danger' : '' }} is-success inputline is-medium"
                                 id="name" type="text" value="{{ old('name') }}" name="name" placeholder="Name"
-                                autofocus>
+                                autofocus required>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                             </span> @if ($errors->has('name'))
@@ -154,7 +154,7 @@
                                 <input
                                     class="input {{ $errors->has('email') ? ' is-danger' : '' }} is-success inputline is-medium"
                                     id="email" type="email" value="{{ old('email') }}" name="email"
-                                    placeholder="Email Address" autofocus>
+                                    placeholder="Email Address" autofocus required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span> @if ($errors->has('email'))
@@ -225,7 +225,7 @@
                     <div class="field ">
                     <p class="control has-text-centered is-centered loginbutton">
                         <button type="submit" class="button is-success is full is-uppercase">
-                            &nbsp; &nbsp; &nbsp; &nbsp; Sign Up &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; Register &nbsp; &nbsp; &nbsp; &nbsp;
                         </button>
                     </p>
                     </div>

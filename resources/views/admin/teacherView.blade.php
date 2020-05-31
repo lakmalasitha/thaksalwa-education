@@ -101,7 +101,7 @@
                             <input
                                 class="input {{ $errors->has('name') ? ' is-danger' : '' }} is-success inputline is-medium"
                                 id="name" type="text" value="{{ old('name') }}" name="name" placeholder="Name"
-                                autofocus>
+                                autofocus required>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                             </span> @if ($errors->has('name'))
@@ -115,7 +115,7 @@
                                 <input
                                     class="input {{ $errors->has('name') ? ' is-danger' : '' }} is-success inputline is-medium"
                                     id="NIC" type="text" value="{{ old('NIC') }}" name="NIC" placeholder="NIC"
-                                    autofocus>
+                                    autofocus required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span> @if ($errors->has('NIC'))
@@ -167,7 +167,7 @@
                                 <input
                                     class="input {{ $errors->has('email') ? ' is-danger' : '' }} is-success inputline is-medium"
                                     id="email" type="email" value="{{ old('email') }}" name="email"
-                                    placeholder="Email Address" autofocus>
+                                    placeholder="Email Address" autofocus required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span> @if ($errors->has('email'))

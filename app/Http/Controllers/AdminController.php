@@ -74,9 +74,10 @@ class AdminController extends Controller
     }
 
     public function studentView($id){
-        $students = User::find($id)->get();
+        $students = User::Where('id','=',$id)->get();
         $stds = Student::Where('user_id','=',$id)->get();
-        return view('admin.studentProfileView', compact('students','stds'));
+        $complains = Complain::Where('user_id','=',$id)->get();
+        return view('admin.studentProfileView', compact('students','stds','complains'));
     }
 
     public function addTeacher(Request $request){

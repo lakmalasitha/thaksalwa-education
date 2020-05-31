@@ -43,7 +43,8 @@ class ComplainsController extends Controller
         $com = new Complain;
         $com->email = Auth::user()->email;
         $com->complain = $request->input('complain');
-
+        $com->user_id = Auth::user()->id;
+        $com->status = 'Pending';   
         $com->save();
         return redirect()->back()->with('success', 'Complain submitted');
     }
@@ -94,6 +95,17 @@ class ComplainsController extends Controller
         $complain->delete();
         return back()->with('success', 'Complain addressed');
     }
+
+    public function complainApprove($id)
+    {
+        $complain = Complain::find($id);
+        $complain->status = 'Approved';
+        $complain->save();
+        return back()->with('success', 'Complain Approved');
+    }
+
+
+
     public function destroy($id)
     {
         //

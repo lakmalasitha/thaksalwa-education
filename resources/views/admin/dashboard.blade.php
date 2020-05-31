@@ -38,15 +38,17 @@
         <div class="columns">
             <div class="column is-3 ">
                 <aside class="menu is-hidden-mobile">
+                    <!--
                     <p class="menu-label">General</p>
                     <ul class="menu-list">
                         <li><a class="is-active">Dashboard</a></li>
                         <li><a>Message</a></li>
                         <li><a>Other</a></li>
                     </ul>
+                    -->
                     <p class="menu-label">Administration</p>
                     <ul class="menu-list">
-                        <li><a>Edit Profile</a></li>
+                        <!--<li><a>Edit Profile</a></li>-->
                         {{-- <li>
                             <a></a>
                             <ul>
@@ -56,10 +58,11 @@
                                 <li><a>Remove a member</a></li>
                             </ul>
                         </li> --}}
-                        <li><a>Change Password</a></li>
+                        <!--<li><a>Change Password</a></li>-->
                         <li><a href="/teacherManage">Manage Teachers</a></li>
                         <li><a href="/studentManage">Manage Students</a></li>
                     </ul>
+                    <!--
                     <p class="menu-label"> Transactions</p>
                     <ul class="menu-list">
                         <li><a>Payments</a></li>
@@ -67,6 +70,7 @@
                         <li><a>Balance</a></li>
                         <li><a>Reports</a></li>
                     </ul>
+                    -->
                 </aside>
             </div>
             <div class="column is-9">
@@ -113,12 +117,14 @@
                                 <a href="/teacherManage"><button class="button is-success">Teachers</button></a>
                             </article>
                         </div>
+                        <!--
                         <div class="tile is-parent">
                             <article class="tile is-child box">
                                 <p class="title">19</p>
                                 <p class="subtitle">Feedbacks</p>
                             </article>
                         </div>
+                        -->
                     </div>
                 </section>
             </div>

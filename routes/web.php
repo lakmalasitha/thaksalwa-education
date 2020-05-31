@@ -55,6 +55,7 @@ Route::get('/studentprofile/complain',function(){
 // submit complains
 Route::post('complain_upload','ComplainsController@store');
 Route::post('/delete/deleteComplain/{id}', 'ComplainsController@complainRemove');
+Route::post('/approve/approveComplain/{id}', 'ComplainsController@complainApprove');
 Route::get('/viewComplains','AdminController@complains');
 
 Route::get('/studentManage','AdminController@students');
@@ -79,6 +80,7 @@ Route::get('downloadfiles','FileController@downloadFunc');
 Route::get('/aboutus', 'PageController@aboutus');
 Route::get('/livepage', 'PageController@live');
 // Route::get('/contactus', 'PageController@contactus');
+
 
 
 Route::get('/addolevel', 'AddAdvertisementController@olevel')->middleware('auth');

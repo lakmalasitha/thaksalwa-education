@@ -33,6 +33,28 @@
                     <p>Selected Medium: &nbsp;{{$std->medium}}</p>
                     @endforeach
                     <br>
+                    <h3><b>Complaints and Complain Status</b></h3>
+                    <hr>
+                    @if (count($complains)>0)
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col" style="text-align: center">Complaint Id</th>
+                            <th scope="col" style="text-align: center">Complaint Status</th>
+                        </tr>
+                        </thead>
+                        <tbody style="text-align: center">
+                            @foreach ($complains as $complain)
+                                <tr style="text-align: center">
+                                    <td style="text-align: center">{{$complain->id}}</td>
+                                    <td style="text-align: center">{{$complain->status}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    @else 
+                        <p>No Complains available</p>
+                    @endif
                 </div>
             </div>
         </div>

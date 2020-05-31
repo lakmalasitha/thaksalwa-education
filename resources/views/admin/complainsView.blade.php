@@ -73,7 +73,12 @@
                                     <form action="/delete/deleteComplain/{{$complain->id}}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$complain->id}}">
-                                        <button class="button is-danger" onclick="return confirm('Are you sure?')" type="submit">Address</button>
+                                        <button class="button is-danger" style="width:100%" onclick="return confirm('Are you sure?')" type="submit">Remove</button>
+                                    </form>
+                                    <form action="/approve/approveComplain/{{$complain->id}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{$complain->id}}">
+                                        <button class="button is-success" style="width:100%" onclick="return confirm('Are you sure?')" type="submit">Approve</button>
                                     </form>
                                 </td>
                             </tr>
