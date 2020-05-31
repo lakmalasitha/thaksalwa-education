@@ -16,7 +16,7 @@
                 @csrf
                 <div class="field has-addons searchagain">
                     <p class="control has-icons-left is-expanded">
-                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City or Province " id="search" name="searchquery">
+                        <input class="input is-medium inputsearchbox" type="text" placeholder="Search by City or Province" id="search" name="searchquery">
                         <span class="icon is-small is-left">
                             <i class="fas fa-search"></i>
                         </span>
@@ -30,10 +30,10 @@
                         <div class="field">
                             <div class="control">
                                 <div class="select is-black">
-                                    <select>
-                                      <option>Select Stream</option>
-                                      <option>Ordinary Level</option>
-                                      <option>Advance Level</option>
+                                    <select name="stream">
+                                      <option value="0">Select Stream</option>
+                                      <option value="OL">Ordinary Level</option>
+                                      <option value="AL">Advance Level</option>
                                     </select>
                                 </div>
                             </div>
@@ -43,8 +43,8 @@
                         <div class="field">
                             <div class="control">
                                 <div class="select is-black">
-                                    <select>
-                                      <option>Select Medium</option>
+                                    <select name="medium">
+                                      <option value="0">Select Medium</option>
                                       <option>Sinhala Medium</option>
                                       <option>Tamil Medium</option>
                                       <option>English Medium</option>
@@ -56,8 +56,9 @@
                     <div class="column is-2">
                         <div class="field">
                             <div class="control">
-                                <div class="">
+                                <div class="select is-black">
                                     <select name="subject" class="form-control form-control-lg" id="subject">
+                                      <option value="0">Select Subject</option>
                                       <option value="english" >English</option>
                                       <option value="Sinhala">Sinhala</option>
                                       <option value="Buddhisum">Buddhisum</option>
@@ -79,9 +80,9 @@
                                       <option >Chemitry</option>
                                       <option >Technology</option>
                                     </select>
-                                    <script>
+                                    {{-- <script>
                                       $("#subject").select2();
-                                    </script>
+                                    </script> --}}
                                 </div>
                             </div>
                         </div>

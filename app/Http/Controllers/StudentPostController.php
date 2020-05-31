@@ -156,22 +156,103 @@ class StudentPostController extends Controller
         $medium =$request->input('medium');
         $stream=$request->input('stream');
         
-        
-
-        $ShowAdvertisment = StudentPost::where(function ($query) use ($keyword) {
-            $query->orwhere('district', 'LIKE', $keyword)
-                  ->orWhere('province', 'LIKE', $keyword);
-            })->where(function ($query) use ($subject) {
-
-                $query->where('subject', 'LIKE', $subject);
-            })->where(function ($query) use ($medium) {
-
-                $query->where('language', 'LIKE', $medium);
-            })->whereHas('student', function ($query) use ($stream) {
-
-                $query->where('stream', 'LIKE', $stream);
-    
-            })->get();
+        if($keyword == null && $subject =='0' && $medium == '0' && $stream == '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->get();
+        }elseif($keyword != null && $subject=='0' && $medium == '0' && $stream == '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->orwhere('district', 'LIKE', $keyword)
+            ->orWhere('province', 'LIKE', $keyword)
+            ->get();
+        }elseif($keyword != null && $subject !='0' && $medium == '0' && $stream == '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->orwhere('district', 'LIKE', $keyword)
+            ->orWhere('province', 'LIKE', $keyword)
+            ->where('subject', 'LIKE', $subject)
+            ->get();
+        }elseif($keyword == null && $subject !='0' && $medium == '0' && $stream == '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')
+            ->where('subject', 'LIKE', $subject)
+            ->get();
+        }
+        elseif($keyword == null && $subject =='0' && $medium != '0' && $stream == '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')
+            ->where('language', 'LIKE', $medium)
+            ->get();
+        }
+        elseif($keyword == null && $subject =='0' && $medium == '0' && $stream != '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')
+            ->whereHas('student', function ($query)  use ($stream){
+                $query->where('stream', 'like', $stream);
+            })
+            ->get();
+        }
+        elseif($keyword == null && $subject !='0' && $medium != '0' && $stream == '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')
+            ->where('subject', 'LIKE', $subject)
+            ->where('language', 'LIKE', $medium)
+            ->get();
+        }
+        elseif($keyword == null && $subject !='0' && $medium == '0' && $stream != '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')
+            ->where('subject', 'LIKE', $subject)
+            ->whereHas('student', function ($query)  use ($stream){
+                $query->where('stream', 'like', $stream);
+            })
+            ->get();
+        }
+        elseif($keyword == null && $subject =='0' && $medium != '0' && $stream != '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')
+            ->where('subject', 'LIKE', $subject)
+            ->whereHas('student', function ($query)  use ($stream){
+                $query->where('stream', 'like', $stream);
+            })
+            ->get();
+        }
+        elseif($keyword == null && $subject !='0' && $medium != '0' && $stream != '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')
+            ->where('subject', 'LIKE', $subject)
+            ->where('language', 'LIKE', $medium)
+            ->whereHas('student', function ($query)  use ($stream){
+                $query->where('stream', 'like', $stream);
+            })
+            ->get();
+        }
+        elseif($keyword != null && $subject !='0' && $medium != '0' && $stream == '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->orwhere('district', 'LIKE', $keyword)
+            ->orWhere('province', 'LIKE', $keyword)
+            ->where('subject', 'LIKE', $subject)
+            ->where('language', 'LIKE', $medium)
+            ->get();
+        }
+        elseif($keyword != null && $subject !='0' && $medium == '0' && $stream != '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->orwhere('district', 'LIKE', $keyword)
+            ->orWhere('province', 'LIKE', $keyword)
+            ->where('subject', 'LIKE', $subject)
+            ->whereHas('student', function ($query)  use ($stream){
+                $query->where('stream', 'like', $stream);
+            })
+            ->get();
+        }
+        elseif($keyword != null && $subject =='0' && $medium != '0' && $stream != '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->orwhere('district', 'LIKE', $keyword)
+            ->orWhere('province', 'LIKE', $keyword)
+            ->where('language', 'LIKE', $medium)
+            ->whereHas('student', function ($query)  use ($stream){
+                $query->where('stream', 'like', $stream);
+            })
+            ->get();
+        }
+        elseif($keyword != null && $subject !='0' && $medium != '0' && $stream != '0'){
+            $ShowAdvertisment = StudentPost::orderBy('created_at','desc')->orwhere('district', 'LIKE', $keyword)
+            ->orWhere('province', 'LIKE', $keyword)
+            ->where('subject', 'LIKE', $subject)
+            ->where('language', 'LIKE', $medium)
+            ->whereHas('student', function ($query)  use ($stream){
+                $query->where('stream', 'like', $stream);
+            })
+            ->get();
+        }
+        else{
+            return null;
+        }
 
             return view('layout.advertisment.studentrequest.showrequest',compact('ShowAdvertisment'));
         

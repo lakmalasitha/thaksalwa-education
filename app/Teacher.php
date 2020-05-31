@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
-    public function teacherpost(){
+    public function teacherposts(){
 
         return $this->hasMany(TeacherPost::class);
         
@@ -14,5 +14,14 @@ class Teacher extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public static function returnTeacherId ($id){
+        $teacherId = Teacher::where('user_id', $id)->first();
+        if($teacherId){
+            return $teacherId->id;
+        }else{
+            return null;
+        }
     }
 }
