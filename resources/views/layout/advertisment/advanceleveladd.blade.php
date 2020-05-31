@@ -17,7 +17,7 @@
         <form action="/advertisement" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="">
-                    <input class="input" type="text" value="{{ Auth::user()->id }}" name="teacher_id" hidden>
+                    <input class="input" type="text" value="{{ App\Teacher::returnTeacherId(Auth::user()->id) }}" name="teacher_id" hidden>
                 <div class="field">
                         <label class="label" >Name</label>
                             <div class="control">
